@@ -69,9 +69,7 @@ function About() {
       </h2>
       <div className="bg-gray-800 p-8 rounded-lg shadow-lg">
         <p className="text-lg leading-relaxed">
-          I'm Abhishek Tiwari, a passionate Full Stack Developer with a keen interest in building robust and scalable web applications. 
-          With a strong foundation in React.js, Django, and various web technologies, I strive to create seamless user experiences and efficient backend systems. 
-          Currently pursuing my Masters in Computer Applications from Chitkara University, Punjab, I'm always eager to learn and apply new technologies to solve real-world problems.
+        As a postgraduate student with a strong foundation in programming, I bring a high level of responsibility and organization to all my endeavors. My academic background, combined with practical experience in various programming projects, has honed my skills and reinforced my commitment to excellence. I am dedicated to continuous learning and consistently strive to contribute effectively to team efforts and innovative solutions.
         </p>
       </div>
     </section>
