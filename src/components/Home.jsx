@@ -43,7 +43,7 @@ function Hero() {
           Abhishek Tiwari
         </h1>
         <p className="text-2xl text-gray-300 mb-8">
-          Full Stack Developer | React.js | Django | JavaScript
+          Full Stack Developer | React.js | Redux | Django | JavaScript
         </p>
         <div className="flex justify-center space-x-4 mt-4">
           <a href="https://github.com/devilizbusy" target="_blank" rel="noopener noreferrer" className="text-white">
