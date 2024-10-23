@@ -5,7 +5,43 @@ export const fetchProjects = createAsyncThunk('projects/fetchProjects', async ()
   if (!response.ok) {
     throw new Error('Failed to fetch projects');
   }
-  return response.json();
+  const data = await response.json();
+
+  const projectDetails = {
+    'Myntra': {
+      description: 'A clone of the Myntra e-commerce platform, showcasing front-end development skills and responsive design.',
+      technologies: ['React.js', 'CSS', 'JavaScript']
+    },
+    'Elante_Mall': {
+      description: 'A web application for a shopping mall, including store listings, events, and mall information.',
+      technologies: ['HTML', 'CSS', 'JavaScript']
+    },
+    'Skill_Up': {
+      description: 'An online learning platform focused on skill development and course management.',
+      technologies: ['React.js', 'Node.js', 'Express.js', 'MongoDB']
+    },
+    'Portfolio': {
+      description: 'My personal portfolio website showcasing projects, skills, and professional information.',
+      technologies: ['React.js', 'Redux', 'Tailwind CSS']
+    },
+    'WorkBoard': {
+      description: 'A project management tool for organizing tasks and tracking progress.',
+      technologies: ['React.js', 'Redux', 'Node.js', 'Express.js', 'MongoDB']
+    }
+  };
+
+  const orderedProjects = ['Myntra', 'Elante_Mall', 'Skill_Up', 'Portfolio', 'WorkBoard'];
+
+  return orderedProjects
+    .map(name => data.find(project => project.name === name))
+    .filter(Boolean)
+    .map(project => ({
+      ...project,
+      description: projectDetails[project.name]?.description || project.description,
+      technologies: projectDetails[project.name]?.technologies || [],
+      deployStatus: 'idle',
+      deployedUrl: null,
+    }));
 });
 
 export const deployProject = createAsyncThunk('projects/deployProject', async (projectId, { getState }) => {
@@ -39,11 +75,7 @@ const projectsSlice = createSlice({
       })
       .addCase(fetchProjects.fulfilled, (state, action) => {
         state.status = 'succeeded';
-        state.projects = action.payload.map(project => ({
-          ...project,
-          deployStatus: 'idle',
-          deployedUrl: null,
-        }));
+        state.projects = action.payload;
       })
       .addCase(fetchProjects.rejected, (state, action) => {
         state.status = 'failed';

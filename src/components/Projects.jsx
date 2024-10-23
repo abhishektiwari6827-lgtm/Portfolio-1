@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { motion, AnimatePresence } from 'framer-motion';
 import { fetchProjects, deployProject } from '../store/projectsSlice';
-import { ExternalLink, AlertCircle } from 'lucide-react';
+import { ExternalLink, AlertCircle, ChevronDown, ChevronUp } from 'lucide-react';
 import { FaGithub } from 'react-icons/fa';
 
 export default function Projects() {
@@ -77,6 +77,16 @@ export default function Projects() {
 }
 
 function ProjectCard({ project, index, onDemoClick }) {
+  const [isExpanded, setIsExpanded] = useState(false);
+
+  const toggleExpand = () => {
+    setIsExpanded(!isExpanded);
+  };
+
+  if (!project) {
+    return null;
+  }
+
   return (
     <motion.div
       className="bg-gray-800 rounded-lg shadow-lg overflow-hidden"
@@ -86,7 +96,37 @@ function ProjectCard({ project, index, onDemoClick }) {
     >
       <div className="p-6">
         <h3 className="text-xl font-semibold mb-2">{project.name}</h3>
-        <p className="text-gray-400 mb-4 h-20 overflow-hidden">{project.description}</p>
+        <div className={`text-gray-400 mb-4 ${isExpanded ? '' : 'h-20 overflow-hidden'}`}>
+          <p>{project.description}</p>
+        </div>
+        {project.description && project.description.length > 100 && (
+          <button
+            onClick={toggleExpand}
+            className="text-blue-400 hover:text-blue-300 transition-colors mb-4 flex items-center"
+          >
+            {isExpanded ? (
+              <>
+                <ChevronUp size={16} className="mr-1" />
+                Show less
+              </>
+            ) : (
+              <>
+                <ChevronDown size={16} className="mr-1" />
+                Show more
+              </>
+            )}
+          </button>
+        )}
+        <div className="mb-4">
+          <h4 className="text-lg font-semibold mb-2">Technologies Used:</h4>
+          <div className="flex flex-wrap gap-2">
+            {project.technologies && project.technologies.map((tech, index) => (
+              <span key={index} className="bg-gray-700 text-gray-300 text-xs font-semibold px-2.5 py-0.5 rounded">
+                {tech}
+              </span>
+            ))}
+          </div>
+        </div>
         <div className="flex justify-between items-center">
           <a 
             href={project.html_url} 
