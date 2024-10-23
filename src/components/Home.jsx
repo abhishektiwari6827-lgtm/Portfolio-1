@@ -79,8 +79,11 @@ function About() {
 function Skills() {
   const skills = [
     { name: 'React.js', icon: <Code size={24} /> },
+    { name: 'Redux', icon: <Code size={24} /> },
+    { name: 'Bootstrap', icon: <Code size={24} /> },
     { name: 'Django', icon: <Server size={24} /> },
     { name: 'JavaScript', icon: <Code size={24} /> },
+    { name: 'Java', icon: <Code size={24} /> },
     { name: 'Tailwind CSS', icon: <Code size={24} /> },
     { name: 'HTML/CSS', icon: <Code size={24} /> },
     { name: 'PostgreSQL', icon: <Database size={24} /> },

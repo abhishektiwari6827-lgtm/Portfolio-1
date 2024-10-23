@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { motion, AnimatePresence } from 'framer-motion';
-import { fetchProjects } from '../store/projectsSlice';
+import { fetchProjects, deployProject } from '../store/projectsSlice';
 import { ExternalLink, AlertCircle } from 'lucide-react';
 import { FaGithub } from 'react-icons/fa';
 
@@ -25,12 +25,18 @@ export default function Projects() {
     return <div className="text-center py-20 text-red-500">Error: {error}</div>;
   }
 
-  const handleDemoClick = (project) => {
-    if (project.homepage) {
+  const handleDemoClick = async (project) => {
+    if (project.deployedUrl) {
       setSelectedProject(project);
       setDemoError(null);
     } else {
-      setDemoError("Live demo is not available for this project.");
+      try {
+        await dispatch(deployProject(project.id)).unwrap();
+        setSelectedProject(project);
+        setDemoError(null);
+      } catch (error) {
+        setDemoError(`Failed to deploy ${project.name}: ${error.message}`);
+      }
     }
   };
 
@@ -95,12 +101,15 @@ function ProjectCard({ project, index, onDemoClick }) {
             onClick={onDemoClick}
             className={`
               text-green-400 hover:text-green-300 transition-colors flex items-center
-              ${!project.homepage ? 'opacity-50 cursor-not-allowed hover:text-green-400' : ''}
+              ${project.deployStatus === 'deploying' ? 'opacity-50 cursor-wait' : ''}
+              ${project.deployStatus === 'failed' ? 'opacity-50 cursor-not-allowed hover:text-red-400' : ''}
             `}
-            disabled={!project.homepage}
+            disabled={project.deployStatus === 'deploying'}
           >
             <ExternalLink size={20} className="mr-2" />
-            Live Demo
+            {project.deployStatus === 'deployed' ? 'Live Demo' : 
+             project.deployStatus === 'deploying' ? 'Deploying...' : 
+             project.deployStatus === 'failed' ? 'Deployment Failed' : 'Deploy & Demo'}
           </button>
         </div>
       </div>
@@ -127,7 +136,7 @@ function DemoModal({ project, onClose }) {
 
   const handleIframeError = () => {
     setLoading(false);
-    setError("Failed to load the demo. The project might not be deployed or the URL might be incorrect.");
+    setError("Failed to load the demo. The project might not be deployed correctly or the URL might be incorrect.");
   };
 
   return (
@@ -158,7 +167,7 @@ function DemoModal({ project, onClose }) {
             </div>
           )}
           <iframe
-            src={project.homepage}
+            src={project.deployedUrl || project.homepage}
             title={`${project.name} Demo`}
             className={`w-full h-[60vh] border-0 rounded ${loading ? 'hidden' : ''}`}
             onLoad={handleIframeLoad}
