@@ -1,7 +1,9 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Code, Server, Database, Mail, Github, LinkedinIcon } from 'lucide-react'; // Updated import for Github and Linkedin
-import { User, Briefcase, Star } from 'lucide-react'; // For About and Experience sections
+import { Mail, User, Briefcase, Star } from 'lucide-react';
+import { FaReact, FaBootstrap, FaJava, FaHtml5, FaCss3Alt, FaGitAlt, FaGithub, FaLinkedin } from 'react-icons/fa';
+import { SiRedux, SiDjango, SiJavascript, SiTailwindcss, SiPostgresql } from 'react-icons/si';
+import { TbApi } from 'react-icons/tb';
 
 export default function Home() {
   return (
@@ -17,7 +19,6 @@ export default function Home() {
 function Hero() {
   return (
     <section className="relative text-center py-20 bg-gradient-to-b from-gray-900 to-gray-800">
-      {/* Animated Background Circles */}
       <div className="absolute inset-0 overflow-hidden">
         <motion.div
           className="absolute top-1/4 left-1/2 w-64 h-64 bg-blue-500 rounded-full mix-blend-screen opacity-30 blur-3xl"
@@ -43,14 +44,14 @@ function Hero() {
           Abhishek Tiwari
         </h1>
         <p className="text-2xl text-gray-300 mb-8">
-          Full Stack Developer | React.js | Redux | Django | JavaScript
+          Software Engineer | React | Redux | Bootstrap | Django | JavaScript
         </p>
         <div className="flex justify-center space-x-4 mt-4">
           <a href="https://github.com/devilizbusy" target="_blank" rel="noopener noreferrer" className="text-white">
-            <Github size={32} />
+            <FaGithub size={32} />
           </a>
           <a href="https://www.linkedin.com/in/abhishek-tiwariiii" target="_blank" rel="noopener noreferrer" className="text-white">
-            <LinkedinIcon size={32} />
+            <FaLinkedin size={32} />
           </a>
           <a href="mailto:abhishektiwari6827@gmail.com" className="text-white">
             <Mail size={32} />
@@ -69,7 +70,7 @@ function About() {
       </h2>
       <div className="bg-gray-800 p-8 rounded-lg shadow-lg">
         <p className="text-lg leading-relaxed">
-        As a postgraduate student with a strong foundation in programming, I bring a high level of responsibility and organization to all my endeavors. My academic background, combined with practical experience in various programming projects, has honed my skills and reinforced my commitment to excellence. I am dedicated to continuous learning and consistently strive to contribute effectively to team efforts and innovative solutions.
+          As a postgraduate student with a strong foundation in programming, I bring a high level of responsibility and organization to all my endeavors. My academic background, combined with practical experience in various programming projects, has honed my skills and reinforced my commitment to excellence. I am dedicated to continuous learning and consistently strive to contribute effectively to team efforts and innovative solutions.
         </p>
       </div>
     </section>
@@ -78,17 +79,17 @@ function About() {
 
 function Skills() {
   const skills = [
-    { name: 'React.js', icon: <Code size={24} /> },
-    { name: 'Redux', icon: <Code size={24} /> },
-    { name: 'Bootstrap', icon: <Code size={24} /> },
-    { name: 'Django', icon: <Server size={24} /> },
-    { name: 'JavaScript', icon: <Code size={24} /> },
-    { name: 'Java', icon: <Code size={24} /> },
-    { name: 'Tailwind CSS', icon: <Code size={24} /> },
-    { name: 'HTML/CSS', icon: <Code size={24} /> },
-    { name: 'PostgreSQL', icon: <Database size={24} /> },
-    { name: 'Git', icon: <Code size={24} /> },
-    { name: 'RESTful APIs', icon: <Server size={24} /> },
+    { name: 'React', icon: <FaReact size={24} /> },
+    { name: 'Redux', icon: <SiRedux size={24} /> },
+    { name: 'Bootstrap', icon: <FaBootstrap size={24} /> },
+    { name: 'Django', icon: <SiDjango size={24} /> },
+    { name: 'JavaScript', icon: <SiJavascript size={24} /> },
+    { name: 'Java', icon: <FaJava size={24} /> },
+    { name: 'Tailwind CSS', icon: <SiTailwindcss size={24} /> },
+    { name: 'HTML/CSS', icon: <div className="flex"><FaHtml5 size={24} /><FaCss3Alt size={24} className="ml-1" /></div> },
+    { name: 'PostgreSQL', icon: <SiPostgresql size={24} /> },
+    { name: 'Git', icon: <FaGitAlt size={24} /> },
+    { name: 'RESTful APIs', icon: <TbApi size={24} /> },
   ];
 
   return (
