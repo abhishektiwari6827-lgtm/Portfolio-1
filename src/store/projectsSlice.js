@@ -27,38 +27,57 @@ export const fetchProjects = createAsyncThunk('projects/fetchProjects', async ()
     'WorkBoard': {
       description: 'A project management tool for organizing tasks and tracking progress.',
       technologies: ['React.js', 'Redux', 'Node.js', 'Express.js', 'MongoDB']
+    },
+    'Amazon': {
+      description: 'A replica of the Amazon e-commerce platform, showcasing front-end development skills and user interface design.',
+      technologies: ['HTML', 'CSS', 'JavaScript']
     }
   };
 
-  const orderedProjects = ['Myntra', 'Elante_Mall', 'Skill_Up', 'Portfolio', 'WorkBoard'];
+  const orderedProjects = ['Myntra', 'Elante_Mall', 'Skill_Up', 'WorkBoard', 'Amazon'];
 
-  return orderedProjects
+  const sortedProjects = orderedProjects
     .map(name => data.find(project => project.name === name))
-    .filter(Boolean)
-    .map(project => ({
-      ...project,
-      description: projectDetails[project.name]?.description || project.description,
-      technologies: projectDetails[project.name]?.technologies || [],
-      deployStatus: 'idle',
-      deployedUrl: null,
-    }));
+    .filter(Boolean);
+
+  const otherProjects = data.filter(project => !orderedProjects.includes(project.name));
+
+  return [...sortedProjects, ...otherProjects].map(project => ({
+    ...project,
+    description: projectDetails[project.name]?.description || project.description,
+    technologies: projectDetails[project.name]?.technologies || [],
+    deployStatus: 'idle',
+    deployedUrl: null,
+  }));
 });
 
-export const deployProject = createAsyncThunk('projects/deployProject', async (projectId, { getState }) => {
-  const project = getState().projects.projects.find(p => p.id === projectId);
-  if (!project) {
-    throw new Error('Project not found');
+export const deployProject = createAsyncThunk(
+  'projects/deployProject',
+  async (projectId, { getState }) => {
+    const { projects } = getState().projects;
+    const project = projects.find(p => p.id === projectId);
+    if (!project) throw new Error('Project not found');
+
+    const response = await fetch(`https://api.github.com/repos/devilizbusy/${project.name}/dispatches`, {
+      method: 'POST',
+      headers: {
+        'Authorization': `token ${process.env.REACT_APP_GITHUB_TOKEN}`,
+        'Accept': 'application/vnd.github.v3+json'
+      },
+      body: JSON.stringify({
+        event_type: 'deploy'
+      })
+    });
+
+    if (!response.ok) {
+      throw new Error('Failed to trigger deployment');
+    }
+
+    await new Promise(resolve => setTimeout(resolve, 30000));
+
+    return { id: projectId, deployedUrl: `https://devilizbusy.github.io/${project.name}` };
   }
-
-  // Simulating a deployment process
-  await new Promise(resolve => setTimeout(resolve, 2000));
-
-  // In a real scenario, you would call your deployment service here
-  // and get the deployed URL from the service's response
-  const deployedUrl = `https://${project.name.toLowerCase().replace(/_/g, '-')}.yourdomain.com`;
-
-  return { id: projectId, deployedUrl };
-});
+);
 
 const projectsSlice = createSlice({
   name: 'projects',
