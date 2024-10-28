@@ -23,6 +23,7 @@ export default function Header() {
         <nav className="hidden md:flex space-x-8">
           <NavLink to="/">Home</NavLink>
           <NavLink to="/projects">Projects</NavLink>
+          <NavLink to="/certifications">Certifications</NavLink>
           <NavLink to="/contact">Contact</NavLink>
         </nav>
         <button onClick={() => setIsMenuOpen(!isMenuOpen)} className="md:hidden text-white focus:outline-none">
@@ -34,6 +35,7 @@ export default function Header() {
           <div className="flex flex-col space-y-4">
             <NavLink to="/" onClick={() => setIsMenuOpen(false)}>Home</NavLink>
             <NavLink to="/projects" onClick={() => setIsMenuOpen(false)}>Projects</NavLink>
+            <NavLink to="/certifications" onClick={() => setIsMenuOpen(false)}>Certifications</NavLink>
             <NavLink to="/contact" onClick={() => setIsMenuOpen(false)}>Contact</NavLink>
           </div>
         </nav>

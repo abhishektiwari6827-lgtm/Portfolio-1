@@ -7,6 +7,7 @@ import App from './App';
 import Home from './components/Home';
 import Projects from './components/Projects';
 import Contact from './components/Contact';
+import Certifications from './components/Certifications';
 import './index.css';
 
 ReactDOM.createRoot(document.getElementById('root')).render(
@@ -17,6 +18,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
           <Route path="/" element={<App />}>
             <Route index element={<Home />} />
             <Route path="projects" element={<Projects />} />
+            <Route path="certifications" element={<Certifications />} />
             <Route path="contact" element={<Contact />} />
           </Route>
         </Routes>
