@@ -19,7 +19,7 @@ const certifications = [
   },
   {
     id: 2,
-    title: "Quizario Project",
+    title: "Quizario",
     issuer: "Specialisation in domain",
     date: "05 January 2024",
     image: quizarioImage
