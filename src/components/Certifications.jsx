@@ -1,6 +1,8 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import { Award } from 'lucide-react';
+import { Award, X } from 'lucide-react';
+import { Dialog, DialogContent, DialogTrigger } from "../components/ui/dialog"
+import { Button } from "../components/ui/button"
 
 // Import images
 import reactImage from '../images/React.png';
@@ -52,13 +54,34 @@ function CertificationCard({ certification, index }) {
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5, delay: index * 0.1 }}
     >
-      <div className="relative h-48">
-        <img 
-          src={certification.image} 
-          alt={`${certification.title} Certificate`} 
-          className="w-full h-full object-cover"
-        />
-      </div>
+      <Dialog>
+        <DialogTrigger asChild>
+          <div className="relative h-48 cursor-pointer">
+            <img 
+              src={certification.image} 
+              alt={`${certification.title} Certificate`} 
+              className="w-full h-full object-cover"
+            />
+          </div>
+        </DialogTrigger>
+        <DialogContent className="max-w-3xl">
+          <div className="relative">
+            <img 
+              src={certification.image} 
+              alt={`${certification.title} Certificate`} 
+              className="w-full h-auto"
+            />
+            <Button 
+              className="absolute top-2 right-2" 
+              variant="secondary" 
+              size="icon"
+              onClick={() => document.body.click()} // Close the dialog
+            >
+              <X className="h-4 w-4" />
+            </Button>
+          </div>
+        </DialogContent>
+      </Dialog>
       <div className="p-6">
         <h3 className="text-xl font-semibold mb-2 flex items-center">
           <Award className="w-6 h-6 mr-2 text-yellow-500" />
