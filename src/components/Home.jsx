@@ -1,9 +1,14 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+<<<<<<< HEAD
 import { Mail, User, Briefcase, Star } from 'lucide-react';
 import { FaReact, FaBootstrap, FaJava, FaHtml5, FaCss3Alt, FaGitAlt, FaGithub, FaLinkedin } from 'react-icons/fa';
 import { SiRedux, SiDjango, SiJavascript, SiTailwindcss, SiPostgresql } from 'react-icons/si';
 import { TbApi } from 'react-icons/tb';
+=======
+import { Code, Server, Database, Mail, Github, LinkedinIcon } from 'lucide-react'; // Updated import for Github and Linkedin
+import { User, Briefcase, Star } from 'lucide-react'; // For About and Experience sections
+>>>>>>> 8261e38b33ff92b8d5d1d71f7d64dafd1a5d0e91
 
 export default function Home() {
   return (
@@ -19,6 +24,10 @@ export default function Home() {
 function Hero() {
   return (
     <section className="relative text-center py-20 bg-gradient-to-b from-gray-900 to-gray-800">
+<<<<<<< HEAD
+=======
+      {/* Animated Background Circles */}
+>>>>>>> 8261e38b33ff92b8d5d1d71f7d64dafd1a5d0e91
       <div className="absolute inset-0 overflow-hidden">
         <motion.div
           className="absolute top-1/4 left-1/2 w-64 h-64 bg-blue-500 rounded-full mix-blend-screen opacity-30 blur-3xl"
@@ -44,6 +53,7 @@ function Hero() {
           Abhishek Tiwari
         </h1>
         <p className="text-2xl text-gray-300 mb-8">
+<<<<<<< HEAD
           Software Engineer | React | Redux | Bootstrap | Django | JavaScript
         </p>
         <div className="flex justify-center space-x-4 mt-4">
@@ -52,6 +62,16 @@ function Hero() {
           </a>
           <a href="https://www.linkedin.com/in/abhishek-tiwariiii" target="_blank" rel="noopener noreferrer" className="text-white">
             <FaLinkedin size={32} />
+=======
+          Full Stack Developer | React.js | Django | JavaScript
+        </p>
+        <div className="flex justify-center space-x-4 mt-4">
+          <a href="https://github.com/devilizbusy" target="_blank" rel="noopener noreferrer" className="text-white">
+            <Github size={32} />
+          </a>
+          <a href="https://www.linkedin.com/in/abhishek-tiwariiii" target="_blank" rel="noopener noreferrer" className="text-white">
+            <LinkedinIcon size={32} />
+>>>>>>> 8261e38b33ff92b8d5d1d71f7d64dafd1a5d0e91
           </a>
           <a href="mailto:abhishektiwari6827@gmail.com" className="text-white">
             <Mail size={32} />
@@ -70,7 +90,13 @@ function About() {
       </h2>
       <div className="bg-gray-800 p-8 rounded-lg shadow-lg">
         <p className="text-lg leading-relaxed">
+<<<<<<< HEAD
           As a postgraduate student with a strong foundation in programming, I bring a high level of responsibility and organization to all my endeavors. My academic background, combined with practical experience in various programming projects, has honed my skills and reinforced my commitment to excellence. I am dedicated to continuous learning and consistently strive to contribute effectively to team efforts and innovative solutions.
+=======
+          I'm Abhishek Tiwari, a passionate Full Stack Developer with a keen interest in building robust and scalable web applications. 
+          With a strong foundation in React.js, Django, and various web technologies, I strive to create seamless user experiences and efficient backend systems. 
+          Currently pursuing my Masters in Computer Applications from Chitkara University, Punjab, I'm always eager to learn and apply new technologies to solve real-world problems.
+>>>>>>> 8261e38b33ff92b8d5d1d71f7d64dafd1a5d0e91
         </p>
       </div>
     </section>
@@ -79,6 +105,7 @@ function About() {
 
 function Skills() {
   const skills = [
+<<<<<<< HEAD
     { name: 'React', icon: <FaReact size={24} /> },
     { name: 'Redux', icon: <SiRedux size={24} /> },
     { name: 'Bootstrap', icon: <FaBootstrap size={24} /> },
@@ -90,6 +117,16 @@ function Skills() {
     { name: 'PostgreSQL', icon: <SiPostgresql size={24} /> },
     { name: 'Git', icon: <FaGitAlt size={24} /> },
     { name: 'RESTful APIs', icon: <TbApi size={24} /> },
+=======
+    { name: 'React.js', icon: <Code size={24} /> },
+    { name: 'Django', icon: <Server size={24} /> },
+    { name: 'JavaScript', icon: <Code size={24} /> },
+    { name: 'Tailwind CSS', icon: <Code size={24} /> },
+    { name: 'HTML/CSS', icon: <Code size={24} /> },
+    { name: 'PostgreSQL', icon: <Database size={24} /> },
+    { name: 'Git', icon: <Code size={24} /> },
+    { name: 'RESTful APIs', icon: <Server size={24} /> },
+>>>>>>> 8261e38b33ff92b8d5d1d71f7d64dafd1a5d0e91
   ];
 
   return (
@@ -163,4 +200,8 @@ function Experience() {
       </div>
     </section>
   );
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> 8261e38b33ff92b8d5d1d71f7d64dafd1a5d0e91
