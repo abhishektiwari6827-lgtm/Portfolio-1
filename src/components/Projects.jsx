@@ -1,26 +1,15 @@
-<<<<<<< HEAD
-import React, { useEffect } from 'react';
-import { useSelector, useDispatch } from 'react-redux';
-import { motion } from 'framer-motion';
-import { fetchProjects } from '../store/projectsSlice';
-import { Github, ShoppingBag, Building, GraduationCap, LayoutDashboard, ShoppingCart, Clock, Calculator, Code } from 'lucide-react';
-=======
 import React, { useEffect, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { motion, AnimatePresence } from 'framer-motion';
 import { fetchProjects } from '../store/projectsSlice';
 import { ExternalLink, AlertCircle } from 'lucide-react';
 import { FaGithub } from 'react-icons/fa';
->>>>>>> 8261e38b33ff92b8d5d1d71f7d64dafd1a5d0e91
 
 export default function Projects() {
   const dispatch = useDispatch();
   const { projects, status, error } = useSelector((state) => state.projects);
-<<<<<<< HEAD
-=======
   const [selectedProject, setSelectedProject] = useState(null);
   const [demoError, setDemoError] = useState(null);
->>>>>>> 8261e38b33ff92b8d5d1d71f7d64dafd1a5d0e91
 
   useEffect(() => {
     if (status === 'idle') {
@@ -36,22 +25,6 @@ export default function Projects() {
     return <div className="text-center py-20 text-red-500">Error: {error}</div>;
   }
 
-<<<<<<< HEAD
-  const orderedProjects = [
-    'Myntra',
-    'Elante_Mall',
-    'Skill_Up',
-    'WorkBoard',
-    'E-commerce',
-    ...projects.filter(project => 
-      !['Myntra', 'Elante_Mall', 'Skill_Up', 'WorkBoard', 'E-commerce'].includes(project.name)
-    ).map(project => project.name)
-  ];
-
-  const sortedProjects = orderedProjects
-    .map(name => projects.find(project => project.name === name))
-    .filter(Boolean);
-=======
   const handleDemoClick = (project) => {
     if (project.homepage) {
       setSelectedProject(project);
@@ -60,26 +33,16 @@ export default function Projects() {
       setDemoError("Live demo is not available for this project.");
     }
   };
->>>>>>> 8261e38b33ff92b8d5d1d71f7d64dafd1a5d0e91
 
   return (
     <div className="container mx-auto px-4 py-20">
       <h2 className="text-4xl font-bold mb-12 text-center">My Projects</h2>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-<<<<<<< HEAD
-        {sortedProjects.map((project, index) => (
-=======
         {projects.map((project, index) => (
->>>>>>> 8261e38b33ff92b8d5d1d71f7d64dafd1a5d0e91
           <ProjectCard 
             key={project.id} 
             project={project} 
             index={index} 
-<<<<<<< HEAD
-          />
-        ))}
-      </div>
-=======
             onDemoClick={() => handleDemoClick(project)}
           />
         ))}
@@ -103,13 +66,11 @@ export default function Projects() {
           {demoError}
         </motion.div>
       )}
->>>>>>> 8261e38b33ff92b8d5d1d71f7d64dafd1a5d0e91
     </div>
   );
 }
 
-<<<<<<< HEAD
-function ProjectCard({ project, index }) {
+function ProjectCard({ project, index, onDemoClick }) {
   const getProjectIcon = (name) => {
     switch (name.toLowerCase()) {
       case 'myntra':
@@ -132,9 +93,6 @@ function ProjectCard({ project, index }) {
     }
   };
 
-=======
-function ProjectCard({ project, index, onDemoClick }) {
->>>>>>> 8261e38b33ff92b8d5d1d71f7d64dafd1a5d0e91
   return (
     <motion.div
       className="bg-gray-800 rounded-lg shadow-lg overflow-hidden"
@@ -143,32 +101,8 @@ function ProjectCard({ project, index, onDemoClick }) {
       transition={{ duration: 0.5, delay: index * 0.1 }}
     >
       <div className="p-6">
-<<<<<<< HEAD
-        <h3 className="text-xl font-semibold mb-2 flex items-center">
-          {getProjectIcon(project.name)}
-          {project.name}
-        </h3>
-        <div className="text-gray-400 mb-4">
-          <p>{project.description || 'No description available.'}</p>
-        </div>
-        <div className="mb-4">
-          <h4 className="text-lg font-semibold mb-2">Technologies Used:</h4>
-          <div className="flex flex-wrap gap-2">
-            {project.technologies && project.technologies.length > 0 ? (
-              project.technologies.map((tech, index) => (
-                <span key={index} className="bg-gray-700 text-gray-300 text-xs font-semibold px-2.5 py-0.5 rounded">
-                  {tech}
-                </span>
-              ))
-            ) : (
-              <span className="text-gray-400">Not specified</span>
-            )}
-          </div>
-        </div>
-=======
         <h3 className="text-xl font-semibold mb-2">{project.name}</h3>
-        <p className="text-gray-400 mb-4 h-20 overflow-hidden">{project.description}</p>
->>>>>>> 8261e38b33ff92b8d5d1d71f7d64dafd1a5d0e91
+        <p className="text-gray-400 mb-4 h-20 overflow-hidden">{project.description || 'No description available.'}</p>
         <div className="flex justify-between items-center">
           <a 
             href={project.html_url} 
@@ -176,38 +110,9 @@ function ProjectCard({ project, index, onDemoClick }) {
             rel="noopener noreferrer"
             className="text-blue-400 hover:text-blue-300 transition-colors flex items-center"
           >
-<<<<<<< HEAD
-            <Github size={20} className="mr-2" />
-            View on GitHub
-          </a>
-        </div>
-      </div>
-      {project.topics && project.topics.length > 0 && (
-        <div className="px-6 py-4">
-          <div className="flex flex-wrap gap-2">
-            {project.topics.map((topic) => (
-              <span key={topic} className="bg-blue-500 text-white text-xs font-semibold px-2.5 py-0.5 rounded">
-                {topic}
-              </span>
-            ))}
-          </div>
-        </div>
-      )}
-=======
             <FaGithub size={20} className="mr-2" />
             View on GitHub
           </a>
-          <button 
-            onClick={onDemoClick}
-            className={`
-              text-green-400 hover:text-green-300 transition-colors flex items-center
-              ${!project.homepage ? 'opacity-50 cursor-not-allowed hover:text-green-400' : ''}
-            `}
-            disabled={!project.homepage}
-          >
-            <ExternalLink size={20} className="mr-2" />
-            Live Demo
-          </button>
         </div>
       </div>
       <div className="px-6 py-4 bg-gray-900">
@@ -273,7 +178,6 @@ function DemoModal({ project, onClose }) {
           />
         </div>
       </motion.div>
->>>>>>> 8261e38b33ff92b8d5d1d71f7d64dafd1a5d0e91
     </motion.div>
   );
 }

@@ -1,20 +1,20 @@
-import React, { useState, useEffect } from 'react'
-import { Link } from 'react-router-dom'
-import { Menu, X } from 'lucide-react'
-import NavLink from './NavLink'
+import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
+import { Menu, X } from 'lucide-react';
+import NavLink from './NavLink';
 
 export default function Header() {
-  const [isMenuOpen, setIsMenuOpen] = useState(false)
-  const [scrolled, setScrolled] = useState(false)
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
-      setScrolled(window.scrollY > 50)
-    }
+      setScrolled(window.scrollY > 50);
+    };
 
-    window.addEventListener('scroll', handleScroll)
-    return () => window.removeEventListener('scroll', handleScroll)
-  }, [])
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
   return (
     <header className={`fixed w-full z-10 transition-all duration-300 ${scrolled ? 'bg-gray-900 shadow-lg' : 'bg-transparent'}`}>
@@ -23,10 +23,7 @@ export default function Header() {
         <nav className="hidden md:flex space-x-8">
           <NavLink to="/">Home</NavLink>
           <NavLink to="/projects">Projects</NavLink>
-<<<<<<< HEAD
           <NavLink to="/certifications">Certifications</NavLink>
-=======
->>>>>>> 8261e38b33ff92b8d5d1d71f7d64dafd1a5d0e91
           <NavLink to="/contact">Contact</NavLink>
         </nav>
         <button onClick={() => setIsMenuOpen(!isMenuOpen)} className="md:hidden text-white focus:outline-none">
@@ -38,14 +35,11 @@ export default function Header() {
           <div className="flex flex-col space-y-4">
             <NavLink to="/" onClick={() => setIsMenuOpen(false)}>Home</NavLink>
             <NavLink to="/projects" onClick={() => setIsMenuOpen(false)}>Projects</NavLink>
-<<<<<<< HEAD
             <NavLink to="/certifications" onClick={() => setIsMenuOpen(false)}>Certifications</NavLink>
-=======
->>>>>>> 8261e38b33ff92b8d5d1d71f7d64dafd1a5d0e91
             <NavLink to="/contact" onClick={() => setIsMenuOpen(false)}>Contact</NavLink>
           </div>
         </nav>
       )}
     </header>
-  )
+  );
 }
