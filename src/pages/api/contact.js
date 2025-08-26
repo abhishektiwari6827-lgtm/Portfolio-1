@@ -1,12 +1,12 @@
-import nodemailer from 'nodemailer';
+import nodemailer from "nodemailer";
 
 export default async function handler(req, res) {
-  if (req.method === 'POST') {
+  if (req.method === "POST") {
     const { name, email, message } = req.body;
 
     // Create a nodemailer transporter
-    const transporter = nodemailer.createTransport({
-      host: 'smtp.gmail.com',
+    const transporter = nodemailer.createTransporter({
+      host: "smtp.gmail.com",
       port: 587,
       auth: {
         user: process.env.EMAIL_USER,
@@ -18,7 +18,7 @@ export default async function handler(req, res) {
       // Send email
       await transporter.sendMail({
         from: process.env.EMAIL_USER,
-        to: 'abhishektiwari6827@gmail.com', // Your email address
+        to: "abhishektiwari6827@gmail.com",
         subject: `New contact form submission from ${name}`,
         text: `
           Name: ${name}
@@ -27,13 +27,13 @@ export default async function handler(req, res) {
         `,
       });
 
-      res.status(200).json({ message: 'Email sent successfully' });
+      res.status(200).json({ message: "Email sent successfully" });
     } catch (error) {
-      console.error('Error sending email:', error);
-      res.status(500).json({ message: 'Failed to send email' });
+      console.error("Error sending email:", error);
+      res.status(500).json({ message: "Failed to send email" });
     }
   } else {
-    res.setHeader('Allow', ['POST']);
+    res.setHeader("Allow", ["POST"]);
     res.status(405).end(`Method ${req.method} Not Allowed`);
   }
 }
