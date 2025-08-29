@@ -118,7 +118,7 @@ export default function Header() {
           {/* Social Links */}
           <div className="hidden md:flex items-center space-x-4">
             <motion.a
-              href="https://github.com/devilizbusy"
+              href="https://github.com/Abhishek6827"
               target="_blank"
               rel="noopener noreferrer"
               className="group relative p-2 rounded-full bg-gray-800 hover:bg-gray-700 transition-all duration-300"
@@ -231,7 +231,7 @@ export default function Header() {
 
                 <div className="flex items-center space-x-4 px-4 pt-4 border-t border-gray-800">
                   <motion.a
-                    href="https://github.com/devilizbusy"
+                    href="https://github.com/Abhishek6827"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="flex items-center space-x-2 text-gray-300 hover:text-white transition-colors duration-300"

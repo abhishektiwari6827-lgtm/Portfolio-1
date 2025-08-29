@@ -101,7 +101,7 @@ export default function Footer() {
             </p>
             <div className="flex space-x-4">
               <motion.a
-                href="https://github.com/devilizbusy"
+                href="https://github.com/Abhishek6827"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="group relative p-3 bg-gray-800 rounded-full hover:bg-gray-700 transition-all duration-300"

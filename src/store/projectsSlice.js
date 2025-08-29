@@ -5,7 +5,7 @@ export const fetchProjects = createAsyncThunk(
   "projects/fetchProjects",
   async () => {
     const response = await fetch(
-      "https://api.github.com/users/devilizbusy/repos"
+      "https://api.github.com/users/Abhishek6827/repos"
     );
     if (!response.ok) {
       throw new Error("Failed to fetch projects");
@@ -17,7 +17,7 @@ export const fetchProjects = createAsyncThunk(
         description:
           "A fully responsive e-commerce fashion website clone with modern UI/UX, product catalog, shopping cart, and user authentication features.",
         technologies: ["React", "Redux", "CSS", "JavaScript"],
-        demo: "https://devilizbusy.github.io/Myntra-Clone/",
+        demo: "https://Abhishek6827.github.io/Myntra-Clone/",
         category: "E-commerce",
         featured: true,
         image:
@@ -27,7 +27,7 @@ export const fetchProjects = createAsyncThunk(
         description:
           "A comprehensive Amazon-inspired e-commerce platform with product listings, search functionality, and responsive design.",
         technologies: ["React", "JavaScript", "CSS", "HTML"],
-        demo: "https://devilizbusy.github.io/Amazon-Clone/",
+        demo: "https://Abhishek6827.github.io/Amazon-Clone/",
         category: "E-commerce",
         featured: true,
         image:
@@ -37,7 +37,7 @@ export const fetchProjects = createAsyncThunk(
         description:
           "A project management dashboard with task tracking, team collaboration features, and intuitive drag-and-drop interface.",
         technologies: ["React", "Redux", "Tailwind CSS", "JavaScript"],
-        demo: "https://devilizbusy.github.io/WorkBoard/",
+        demo: "https://Abhishek6827.github.io/WorkBoard/",
         category: "Productivity",
         featured: true,
         image:
@@ -47,7 +47,7 @@ export const fetchProjects = createAsyncThunk(
         description:
           "A beautiful digital clock application showing Indian time zones with elegant design and smooth animations.",
         technologies: ["JavaScript", "CSS", "HTML"],
-        demo: "https://devilizbusy.github.io/Bharat-Clock/",
+        demo: "https://Abhishek6827.github.io/Bharat-Clock/",
         category: "Utility",
         featured: false,
         image:
@@ -57,7 +57,7 @@ export const fetchProjects = createAsyncThunk(
         description:
           "A modern calculator application with scientific functions, memory operations, and responsive design.",
         technologies: ["JavaScript", "CSS", "HTML"],
-        demo: "https://devilizbusy.github.io/Calculator/",
+        demo: "https://Abhishek6827.github.io/Calculator/",
         category: "Utility",
         featured: false,
         image:
@@ -67,7 +67,7 @@ export const fetchProjects = createAsyncThunk(
         description:
           "A shopping mall website with store directory, event listings, and interactive mall map functionality.",
         technologies: ["React", "CSS", "JavaScript"],
-        demo: "https://devilizbusy.github.io/Elante_Mall/",
+        demo: "https://Abhishek6827.github.io/Elante_Mall/",
         category: "Business",
         featured: false,
         image:
@@ -77,7 +77,7 @@ export const fetchProjects = createAsyncThunk(
         description:
           "An educational platform for skill development with course listings, progress tracking, and interactive learning modules.",
         technologies: ["React", "Bootstrap", "JavaScript"],
-        demo: "https://devilizbusy.github.io/Skill_Up/",
+        demo: "https://Abhishek6827.github.io/Skill_Up/",
         category: "Education",
         featured: false,
         image:
@@ -87,7 +87,7 @@ export const fetchProjects = createAsyncThunk(
         description:
           "My personal portfolio website showcasing projects, skills, and professional information built with modern React technologies.",
         technologies: ["React", "Redux", "Tailwind CSS", "Framer Motion"],
-        demo: "https://devilizbusy.github.io/Portfolio/",
+        demo: "https://Abhishek6827.github.io/Portfolio/",
         category: "Portfolio",
         featured: false,
         image:
@@ -146,7 +146,7 @@ export const deployProject = createAsyncThunk(
 
     return {
       id: projectId,
-      deployedUrl: `https://devilizbusy.github.io/${project.name}`,
+      deployedUrl: `https://Abhishek6827.github.io/${project.name}`,
       status: "deployed",
     };
   }

@@ -23,8 +23,8 @@ function Hero() {
       name: "Myntra Clone",
       image:
         "https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=500&h=300&fit=crop&crop=center",
-      demo: "https://devilizbusy.github.io/Myntra-Clone/",
-      github: "https://github.com/devilizbusy/Myntra-Clone",
+      demo: "https://Abhishek6827.github.io/Myntra-Clone/",
+      github: "https://github.com/Abhishek6827/Myntra-Clone",
       tech: ["React", "Redux", "CSS"],
       description: "Fashion e-commerce platform with modern UI",
       color: "from-pink-500 to-rose-500",
@@ -33,8 +33,8 @@ function Hero() {
       name: "Amazon Clone",
       image:
         "https://images.unsplash.com/photo-1563013544-824ae1b704d3?w=500&h=300&fit=crop&crop=center",
-      demo: "https://devilizbusy.github.io/Amazon-Clone/",
-      github: "https://github.com/devilizbusy/Amazon-Clone",
+      demo: "https://Abhishek6827.github.io/Amazon-Clone/",
+      github: "https://github.com/Abhishek6827/Amazon-Clone",
       tech: ["React", "JavaScript", "CSS"],
       description: "E-commerce platform with advanced features",
       color: "from-orange-500 to-amber-500",
@@ -43,8 +43,8 @@ function Hero() {
       name: "WorkBoard",
       image:
         "https://images.unsplash.com/photo-1611224923853-0139583c060f?w=500&h=300&fit=crop&crop=center",
-      demo: "https://devilizbusy.github.io/WorkBoard/",
-      github: "https://github.com/devilizbusy/WorkBoard",
+      demo: "https://Abhishek6827.github.io/WorkBoard/",
+      github: "https://github.com/Abhishek6827/WorkBoard",
       tech: ["React", "Redux", "Tailwind"],
       description: "Project management dashboard with collaboration tools",
       color: "from-blue-500 to-cyan-500",
@@ -53,8 +53,8 @@ function Hero() {
       name: "Bharat Clock",
       image:
         "https://images.unsplash.com/photo-1587145820266-a5951ee6f620?w=500&h=300&fit=crop&crop=center",
-      demo: "https://devilizbusy.github.io/Bharat-Clock/",
-      github: "https://github.com/devilizbusy/Bharat-Clock",
+      demo: "https://Abhishek6827.github.io/Bharat-Clock/",
+      github: "https://github.com/Abhishek6827/Bharat-Clock",
       tech: ["JavaScript", "CSS", "HTML"],
       description: "Beautiful digital clock with Indian time zones",
       color: "from-green-500 to-emerald-500",
@@ -63,8 +63,8 @@ function Hero() {
       name: "Calculator",
       image:
         "https://images.unsplash.com/photo-1501139083538-0139583c060f?w=500&h=300&fit=crop&crop=center",
-      demo: "https://devilizbusy.github.io/Calculator/",
-      github: "https://github.com/devilizbusy/Calculator",
+      demo: "https://Abhishek6827.github.io/Calculator/",
+      github: "https://github.com/Abhishek6827/Calculator",
       tech: ["JavaScript", "CSS", "HTML"],
       description: "Modern calculator with scientific functions",
       color: "from-purple-500 to-violet-500",
@@ -244,7 +244,7 @@ function Hero() {
               className="flex justify-center lg:justify-start space-x-6"
             >
               <motion.a
-                href="https://github.com/devilizbusy"
+                href="https://github.com/Abhishek6827"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="group relative p-3 bg-gray-800 rounded-full hover:bg-gray-700 transition-all duration-300"

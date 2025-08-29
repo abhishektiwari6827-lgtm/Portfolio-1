@@ -232,7 +232,7 @@ export default function DeploymentGuide() {
                 <div className="bg-gray-900 p-4 rounded-lg relative">
                   <pre className="text-green-400 text-sm overflow-x-auto">
                     {`{
-  "homepage": "https://devilizbusy.github.io/[REPOSITORY-NAME]",
+  "homepage": "https://Abhishek6827.github.io/[REPOSITORY-NAME]",
   "scripts": {
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build"
@@ -243,7 +243,7 @@ export default function DeploymentGuide() {
                     onClick={() =>
                       copyToClipboard(
                         `{
-  "homepage": "https://devilizbusy.github.io/[REPOSITORY-NAME]",
+  "homepage": "https://Abhishek6827.github.io/[REPOSITORY-NAME]",
   "scripts": {
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build"
@@ -311,7 +311,7 @@ export default function DeploymentGuide() {
               <div className="bg-blue-500/10 border border-blue-500/20 p-4 rounded-lg">
                 <p className="text-blue-400 text-sm">
                   Your project will be available at:
-                  https://devilizbusy.github.io/[REPOSITORY-NAME]
+                  https://Abhishek6827.github.io/[REPOSITORY-NAME]
                 </p>
               </div>
             </div>
@@ -343,13 +343,13 @@ export default function DeploymentGuide() {
                   <div>
                     <h3 className="font-semibold">{project.name}</h3>
                     <p className="text-sm text-gray-400">
-                      https://devilizbusy.github.io/{project.name}/
+                      https://Abhishek6827.github.io/{project.name}/
                     </p>
                   </div>
                   <button
                     onClick={() =>
                       copyToClipboard(
-                        `https://devilizbusy.github.io/${project.name}/`,
+                        `https://Abhishek6827.github.io/${project.name}/`,
                         project.name
                       )
                     }

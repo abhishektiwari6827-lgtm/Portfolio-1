@@ -6,16 +6,16 @@ This guide will help you deploy all your projects to GitHub Pages and make them 
 
 ## Your Projects Status
 
-| Project      | Type       | Status          | Live URL                                    |
-| ------------ | ---------- | --------------- | ------------------------------------------- |
-| Myntra-Clone | React      | Ready to Deploy | https://devilizbusy.github.io/Myntra-Clone/ |
-| Amazon-Clone | React      | Ready to Deploy | https://devilizbusy.github.io/Amazon-Clone/ |
-| WorkBoard    | React      | Ready to Deploy | https://devilizbusy.github.io/WorkBoard/    |
-| Bharat-Clock | Vanilla JS | Ready to Deploy | https://devilizbusy.github.io/Bharat-Clock/ |
-| Calculator   | Vanilla JS | Ready to Deploy | https://devilizbusy.github.io/Calculator/   |
-| Elante_Mall  | React      | Ready to Deploy | https://devilizbusy.github.io/Elante_Mall/  |
-| Skill_Up     | React      | Ready to Deploy | https://devilizbusy.github.io/Skill_Up/     |
-| Portfolio    | React      | ✅ Deployed     | https://devilizbusy.github.io/Portfolio/    |
+| Project      | Type       | Status          | Live URL                                     |
+| ------------ | ---------- | --------------- | -------------------------------------------- |
+| Myntra-Clone | React      | Ready to Deploy | https://Abhishek6827.github.io/Myntra-Clone/ |
+| Amazon-Clone | React      | Ready to Deploy | https://Abhishek6827.github.io/Amazon-Clone/ |
+| WorkBoard    | React      | Ready to Deploy | https://Abhishek6827.github.io/WorkBoard/    |
+| Bharat-Clock | Vanilla JS | Ready to Deploy | https://Abhishek6827.github.io/Bharat-Clock/ |
+| Calculator   | Vanilla JS | Ready to Deploy | https://Abhishek6827.github.io/Calculator/   |
+| Elante_Mall  | React      | Ready to Deploy | https://Abhishek6827.github.io/Elante_Mall/  |
+| Skill_Up     | React      | Ready to Deploy | https://Abhishek6827.github.io/Skill_Up/     |
+| Portfolio    | React      | ✅ Deployed     | https://Abhishek6827.github.io/Portfolio/    |
 
 ## 📋 Prerequisites
 
@@ -40,7 +40,7 @@ Add these lines to your `package.json`:
 
 \`\`\`json
 {
-"homepage": "https://devilizbusy.github.io/[REPOSITORY-NAME]",
+"homepage": "https://Abhishek6827.github.io/[REPOSITORY-NAME]",
 "scripts": {
 "predeploy": "npm run build",
 "deploy": "gh-pages -d build"
@@ -74,7 +74,7 @@ npm run deploy
 4. Choose **main** branch and **/ (root)** folder
 5. Click **Save**
 
-Your project will be live at: `https://devilizbusy.github.io/[REPOSITORY-NAME]/`
+Your project will be live at: `https://Abhishek6827.github.io/[REPOSITORY-NAME]/`
 
 ## 🎯 Quick Deployment Commands
 
@@ -86,7 +86,7 @@ Run these commands for each React project:
 cd Myntra-Clone
 npm install --save-dev gh-pages
 
-# Update package.json with homepage: "https://devilizbusy.github.io/Myntra-Clone"
+# Update package.json with homepage: "https://Abhishek6827.github.io/Myntra-Clone"
 
 npm run deploy
 \`\`\`
@@ -97,7 +97,7 @@ npm run deploy
 cd Amazon-Clone
 npm install --save-dev gh-pages
 
-# Update package.json with homepage: "https://devilizbusy.github.io/Amazon-Clone"
+# Update package.json with homepage: "https://Abhishek6827.github.io/Amazon-Clone"
 
 npm run deploy
 \`\`\`
@@ -108,7 +108,7 @@ npm run deploy
 cd WorkBoard
 npm install --save-dev gh-pages
 
-# Update package.json with homepage: "https://devilizbusy.github.io/WorkBoard"
+# Update package.json with homepage: "https://Abhishek6827.github.io/WorkBoard"
 
 npm run deploy
 \`\`\`
@@ -119,7 +119,7 @@ npm run deploy
 cd Elante_Mall
 npm install --save-dev gh-pages
 
-# Update package.json with homepage: "https://devilizbusy.github.io/Elante_Mall"
+# Update package.json with homepage: "https://Abhishek6827.github.io/Elante_Mall"
 
 npm run deploy
 \`\`\`
@@ -130,7 +130,7 @@ npm run deploy
 cd Skill_Up
 npm install --save-dev gh-pages
 
-# Update package.json with homepage: "https://devilizbusy.github.io/Skill_Up"
+# Update package.json with homepage: "https://Abhishek6827.github.io/Skill_Up"
 
 npm run deploy
 \`\`\`
