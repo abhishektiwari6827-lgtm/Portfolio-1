@@ -3,7 +3,11 @@
 import { useEffect, useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { motion, AnimatePresence } from "framer-motion";
-import { fetchProjects } from "../store/projectsSlice";
+import {
+  fetchProjects,
+  selectAllProjects,
+  selectFeaturedProjects,
+} from "../store/projectsSlice";
 import {
   ExternalLink,
   AlertCircle,
@@ -24,137 +28,154 @@ import {
 import { SiRedux, SiTailwindcss, SiDjango } from "react-icons/si";
 import React from "react";
 
+// Import local images for projects
+import MyntraImage1 from "../images/Myntra/image1.png";
+import MyntraImage2 from "../images/Myntra/image2.png";
+import MyntraImage3 from "../images/Myntra/image3.png";
+import MyntraImage4 from "../images/Myntra/image4.png";
+import MyntraImage5 from "../images/Myntra/image5.png";
+import MyntraImage6 from "../images/Myntra/image6.png";
+
+import SkillUpImage1 from "../images/Skill_Up/image1.png";
+import SkillUpImage2 from "../images/Skill_Up/image2.png";
+import SkillUpImage3 from "../images/Skill_Up/image3.png";
+import SkillUpImage4 from "../images/Skill_Up/image4.png";
+import SkillUpImage5 from "../images/Skill_Up/image5.png";
+import SkillUpImage6 from "../images/Skill_Up/image6.png";
+import SkillUpImage7 from "../images/Skill_Up/image7.png";
+import SkillUpImage8 from "../images/Skill_Up/image8.png";
+import SkillUpImage9 from "../images/Skill_Up/image9.png";
+import SkillUpImage10 from "../images/Skill_Up/image10.png";
+import SkillUpImage11 from "../images/Skill_Up/image11.png";
+import SkillUpImage12 from "../images/Skill_Up/image12.png";
+import SkillUpImage13 from "../images/Skill_Up/image13.png";
+import SkillUpImage14 from "../images/Skill_Up/image14.png";
+import SkillUpImage15 from "../images/Skill_Up/image15.png";
+
+import WorkboardImage1 from "../images/Workboard/image1.png";
+import WorkboardImage2 from "../images/Workboard/image2.png";
+import WorkboardImage3 from "../images/Workboard/image3.png";
+import WorkboardImage4 from "../images/Workboard/image4.png";
+import WorkboardImage5 from "../images/Workboard/image5.png";
+import WorkboardImage6 from "../images/Workboard/image6.png";
+import WorkboardImage7 from "../images/Workboard/image7.png";
+import WorkboardImage8 from "../images/Workboard/image8.png";
+import WorkboardImage9 from "../images/Workboard/image9.png";
+import WorkboardImage10 from "../images/Workboard/image10.png";
+import WorkboardImage11 from "../images/Workboard/image11.png";
+import WorkboardImage12 from "../images/Workboard/image12.png";
+import WorkboardImage13 from "../images/Workboard/image13.png";
+import WorkboardImage14 from "../images/Workboard/image14.png";
+import WorkboardImage15 from "../images/Workboard/image15.png";
+
+import CalendarImage1 from "../images/Market-Seasonality-Explorer/image1.png";
+import CalendarImage2 from "../images/Market-Seasonality-Explorer/image2.png";
+import CalendarImage3 from "../images/Market-Seasonality-Explorer/image3.png";
+import CalendarImage4 from "../images/Market-Seasonality-Explorer/image4.png";
+import CalendarImage5 from "../images/Market-Seasonality-Explorer/image5.png";
+import CalendarImage6 from "../images/Market-Seasonality-Explorer/image6.png";
+import CalendarImage7 from "../images/Market-Seasonality-Explorer/image7.png";
+import CalendarImage8 from "../images/Market-Seasonality-Explorer/image8.png";
+import CalendarImage9 from "../images/Market-Seasonality-Explorer/image9.png";
+import CalendarImage10 from "../images/Market-Seasonality-Explorer/image10.png";
+import CalendarImage11 from "../images/Market-Seasonality-Explorer/image11.png";
+import CalendarImage12 from "../images/Market-Seasonality-Explorer/image12.png";
+import CalendarImage13 from "../images/Market-Seasonality-Explorer/image13.png";
+import CalendarImage14 from "../images/Market-Seasonality-Explorer/image14.png";
+import CalendarImage15 from "../images/Market-Seasonality-Explorer/image15.png";
+
 export default function Projects() {
   const dispatch = useDispatch();
-  const { projects, status, error } = useSelector((state) => state.projects);
+  const projects = useSelector(selectAllProjects);
+  const featuredProjects = useSelector(selectFeaturedProjects);
+  const { status, error } = useSelector((state) => state.projects);
   const [selectedProject, setSelectedProject] = useState(null);
   const [demoError, setDemoError] = useState(null);
   const [filter, setFilter] = useState("all");
   const [hoveredProject, setHoveredProject] = useState(null);
 
-  const enhancedProjects = [
-    {
-      id: 1,
-      name: "Myntra Clone",
-      description:
-        "A fully responsive e-commerce fashion website clone with modern UI/UX, product catalog, shopping cart, and user authentication features.",
-      image:
-        "https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=500&h=300&fit=crop&crop=center",
-      demo: "https://Abhishek6827.github.io/Myntra/",
-      github: "https://github.com/Abhishek6827/Myntra",
-      tech: ["React", "Redux", "CSS", "JavaScript"],
-      category: "E-commerce",
-      featured: true,
-      stars: 12,
-      lastUpdated: "2025-01-15",
-    },
-    {
-      id: 2,
-      name: "Amazon Clone",
-      description:
-        "A comprehensive Amazon-inspired e-commerce platform with product listings, search functionality, and responsive design.",
-      image:
-        "https://images.unsplash.com/photo-1563013544-824ae1b704d3?w=500&h=300&fit=crop&crop=center",
-      demo: "https://Abhishek6827.github.io/Amazon-Clone/",
-      github: "https://github.com/Abhishek6827/Amazon-Clone",
-      tech: ["React", "JavaScript", "CSS", "HTML"],
-      category: "E-commerce",
-      featured: false,
-      stars: 8,
-      lastUpdated: "2025-01-10",
-    },
-    {
-      id: 3,
-      name: "Skill Up",
-      description:
-        "An educational platform for skill development with course listings, progress tracking, and interactive learning modules.",
-      image:
-        "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=500&h=300&fit=crop&crop=center",
-      demo: "https://Abhishek6827.github.io/Skill_Up/",
-      github: "https://github.com/Abhishek6827/Skill_Up",
-      tech: ["React", "Bootstrap", "JavaScript"],
-      category: "Education",
-      featured: true,
-      stars: 10,
-      lastUpdated: "2025-01-20",
-    },
-
-    {
-      id: 4,
-      name: "Bharat Clock",
-      description:
-        "A beautiful digital clock application showing Indian time zones with elegant design and smooth animations.",
-      image:
-        "https://images.unsplash.com/photo-1501139083538-0139583c060f?w=500&h=300&fit=crop&crop=center",
-      demo: "https://Abhishek6827.github.io/Bharat-Clock/",
-      github: "https://github.com/Abhishek6827/Bharat-Clock",
-      tech: ["JavaScript", "CSS", "HTML"],
-      category: "Utility",
-      featured: false,
-      stars: 5,
-      lastUpdated: "2023-12-20",
-    },
-    {
-      id: 5,
-      name: "Calculator",
-      description:
-        "A modern calculator application with scientific functions, memory operations, and responsive design.",
-      image:
-        "https://images.unsplash.com/photo-1587145820266-a5951ee6f620?w=500&h=300&fit=crop&crop=center",
-      demo: "https://Abhishek6827.github.io/Calculator/",
-      github: "https://github.com/Abhishek6827/Calculator",
-      tech: ["JavaScript", "CSS", "HTML"],
-      category: "Utility",
-      featured: false,
-      stars: 3,
-      lastUpdated: "2023-11-15",
-    },
-    {
-      id: 6,
-      name: "Elante Mall",
-      description:
-        "A shopping mall website with store directory, event listings, and interactive mall map functionality.",
-      image:
-        "https://images.unsplash.com/photo-1555529902-5261145633bf?w=500&h=300&fit=crop&crop=center",
-      demo: "https://Abhishek6827.github.io/Elante_Mall/",
-      github: "https://github.com/Abhishek6827/Elante_Mall",
-      tech: ["React", "CSS", "JavaScript"],
-      category: "Business",
-      featured: false,
-      stars: 7,
-      lastUpdated: "2025-01-05",
-    },
-    {
-      id: 7,
-      name: "Kanban_WorkBoard",
-      description:
-        "A project management dashboard with task tracking, team collaboration features, and intuitive drag-and-drop interface.",
-      image:
-        "https://images.unsplash.com/photo-1611224923853-0139583c060f?w=500&h=300&fit=crop&crop=center",
-      demo: "https://Abhishek6827.github.io/Kanban_WorkBoard/",
-      github: "https://github.com/Abhishek6827/Kanban_WorkBoard",
-      tech: ["Django", "React", "Redux", "Tailwind CSS"],
-      category: "Productivity",
-      featured: true,
-      stars: 15,
-      lastUpdated: "2025-08-30",
-    },
-    {
-      id: 8,
-      name: "Market Seasonality Calendar",
-      description:
-        "A calendar application highlighting seasonal market trends and patterns for traders and investors.",
-      image:
-        "https://images.unsplash.com/photo-1563013544-824ae1b704d3?w=500&h=300&fit=crop&crop=center",
-      demo: "https://abhishek6827.github.io/Market-Seasonality-Explorer/",
-      github: "https://github.com/Abhishek6827/Market-Seasonality-Explorer",
-      tech: ["React", "Tailwind CSS", "Recharts", "Binance API"],
-      category: "Productivity",
-      featured: true,
-      stars: 15,
-      lastUpdated: "2025-08-30",
-    },
+  // Create arrays of images for each project
+  const myntraImages = [
+    MyntraImage1,
+    MyntraImage2,
+    MyntraImage3,
+    MyntraImage4,
+    MyntraImage5,
+    MyntraImage6,
   ];
+
+  const skillUpImages = [
+    SkillUpImage1,
+    SkillUpImage2,
+    SkillUpImage3,
+    SkillUpImage4,
+    SkillUpImage5,
+    SkillUpImage6,
+    SkillUpImage7,
+    SkillUpImage8,
+    SkillUpImage9,
+    SkillUpImage10,
+    SkillUpImage11,
+    SkillUpImage12,
+    SkillUpImage13,
+    SkillUpImage14,
+    SkillUpImage15,
+  ];
+
+  const workboardImages = [
+    WorkboardImage1,
+    WorkboardImage2,
+    WorkboardImage3,
+    WorkboardImage4,
+    WorkboardImage5,
+    WorkboardImage6,
+    WorkboardImage7,
+    WorkboardImage8,
+    WorkboardImage9,
+    WorkboardImage10,
+    WorkboardImage11,
+    WorkboardImage12,
+    WorkboardImage13,
+    WorkboardImage14,
+    WorkboardImage15,
+  ];
+
+  const calendarImages = [
+    CalendarImage1,
+    CalendarImage2,
+    CalendarImage3,
+    CalendarImage4,
+    CalendarImage5,
+    CalendarImage6,
+    CalendarImage7,
+    CalendarImage8,
+    CalendarImage9,
+    CalendarImage10,
+    CalendarImage11,
+    CalendarImage12,
+    CalendarImage13,
+    CalendarImage14,
+    CalendarImage15,
+  ];
+
+  // Map local images to projects
+  const getProjectImages = (projectName) => {
+    const imageMap = {
+      Myntra: myntraImages,
+      Skill_Up: skillUpImages,
+      Kanban_WorkBoard: workboardImages,
+      "Market-Seasonality-Explorer": calendarImages,
+    };
+    return imageMap[projectName] || null;
+  };
+
+  // Add backend URLs to specific projects
+  const getProjectBackend = (projectName) => {
+    const backendMap = {
+      Kanban_WorkBoard: "https://abhishektiwari6827.pythonanywhere.com/",
+    };
+    return backendMap[projectName] || null;
+  };
 
   useEffect(() => {
     if (status === "idle") {
@@ -169,19 +190,16 @@ export default function Projects() {
     "Utility",
     "Business",
     "Education",
+    "Portfolio",
   ];
 
   const filteredProjects =
     filter === "all"
-      ? enhancedProjects
-      : enhancedProjects.filter((project) => project.category === filter);
-
-  const featuredProjects = enhancedProjects.filter(
-    (project) => project.featured
-  );
+      ? projects
+      : projects.filter((project) => project.category === filter);
 
   const handleDemoClick = (project) => {
-    if (project.demo) {
+    if (project.demo || project.deployedUrl) {
       setSelectedProject(project);
       setDemoError(null);
     } else {
@@ -215,7 +233,7 @@ export default function Projects() {
               repeat: Number.POSITIVE_INFINITY,
               ease: "linear",
             }}
-            className="w-8 h-8 border-2 border-blue-500 border-t-transparent rounded-full"
+            className="w-8 h-8 border-2 border-blue-500 border-transparent rounded-full"
           />
           <span className="ml-3 text-lg">Loading projects...</span>
         </div>
@@ -266,10 +284,11 @@ export default function Projects() {
             <FeaturedProjectCard
               key={project.id}
               project={project}
+              images={getProjectImages(project.name)}
+              backend={getProjectBackend(project.name)}
               index={index}
               onDemoClick={() => handleDemoClick(project)}
               onHover={setHoveredProject}
-              isHovered={hoveredProject === project.id}
               getTechIcon={getTechIcon}
             />
           ))}
@@ -308,10 +327,11 @@ export default function Projects() {
             <ProjectCard
               key={project.id}
               project={project}
+              images={getProjectImages(project.name)}
+              backend={getProjectBackend(project.name)}
               index={index}
               onDemoClick={() => handleDemoClick(project)}
               onHover={setHoveredProject}
-              isHovered={hoveredProject === project.id}
               getTechIcon={getTechIcon}
             />
           ))}
@@ -345,7 +365,23 @@ export default function Projects() {
 }
 
 const FeaturedProjectCard = React.forwardRef(
-  ({ project, index, onDemoClick, onHover, isHovered, getTechIcon }, ref) => {
+  (
+    { project, images, backend, index, onDemoClick, onHover, getTechIcon },
+    ref
+  ) => {
+    const [currentImageIndex, setCurrentImageIndex] = useState(0);
+
+    // Cycle through images for projects that have multiple images
+    useEffect(() => {
+      if (!images) return;
+
+      const imageInterval = setInterval(() => {
+        setCurrentImageIndex((prev) => (prev + 1) % images.length);
+      }, 2000); // Change image every 2 seconds
+
+      return () => clearInterval(imageInterval);
+    }, [images]);
+
     return (
       <motion.div
         ref={ref}
@@ -360,8 +396,10 @@ const FeaturedProjectCard = React.forwardRef(
         <div className="relative overflow-hidden">
           <img
             src={
-              project.image ||
-              "/placeholder.svg?height=192&width=400&query=project showcase"
+              images
+                ? images[currentImageIndex]
+                : project.image ||
+                  "/placeholder.svg?height=192&width=400&query=project showcase"
             }
             alt={project.name}
             className="w-full h-48 object-cover transition-transform duration-500 group-hover:scale-110"
@@ -377,17 +415,34 @@ const FeaturedProjectCard = React.forwardRef(
 
           <div className="absolute bottom-4 left-4 right-4 transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300 opacity-0 group-hover:opacity-100">
             <div className="flex space-x-2">
-              <motion.button
-                onClick={onDemoClick}
-                className="flex items-center space-x-1 bg-blue-500 hover:bg-blue-600 text-white px-3 py-2 rounded-lg text-sm font-medium transition-colors flex-1 justify-center"
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-              >
-                <Eye size={16} />
-                <span>Live Demo</span>
-              </motion.button>
+              {(project.demo || project.deployedUrl) && (
+                <motion.a
+                  href={project.demo || project.deployedUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center space-x-1 bg-blue-500 hover:bg-blue-600 text-white px-3 py-2 rounded-lg text-sm font-medium transition-colors flex-1 justify-center"
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                >
+                  <Eye size={16} />
+                  <span>Frontend</span>
+                </motion.a>
+              )}
+              {backend && (
+                <motion.a
+                  href={backend}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center space-x-1 bg-green-500 hover:bg-green-600 text-white px-3 py-2 rounded-lg text-sm font-medium transition-colors flex-1 justify-center"
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                >
+                  <Code size={16} />
+                  <span>Backend</span>
+                </motion.a>
+              )}
               <motion.a
-                href={project.github}
+                href={project.html_url}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center space-x-1 bg-gray-700 hover:bg-gray-600 text-white px-3 py-2 rounded-lg text-sm font-medium transition-colors"
@@ -407,7 +462,7 @@ const FeaturedProjectCard = React.forwardRef(
             </h3>
             <div className="flex items-center space-x-2 text-gray-400 text-sm">
               <Star size={14} />
-              <span>{project.stars}</span>
+              <span>{project.stargazers_count || 0}</span>
             </div>
           </div>
 
@@ -416,7 +471,7 @@ const FeaturedProjectCard = React.forwardRef(
           </p>
 
           <div className="flex flex-wrap gap-2 mb-4">
-            {project.tech.slice(0, 3).map((tech) => (
+            {(project.technologies || []).slice(0, 4).map((tech) => (
               <span
                 key={tech}
                 className="flex items-center space-x-1 bg-gray-700 text-gray-300 px-2 py-1 rounded text-xs font-medium"
@@ -425,9 +480,9 @@ const FeaturedProjectCard = React.forwardRef(
                 <span>{tech}</span>
               </span>
             ))}
-            {project.tech.length > 3 && (
+            {(project.technologies || []).length > 4 && (
               <span className="bg-gray-700 text-gray-300 px-2 py-1 rounded text-xs">
-                +{project.tech.length - 3} more
+                +{(project.technologies || []).length - 4} more
               </span>
             )}
           </div>
@@ -435,11 +490,11 @@ const FeaturedProjectCard = React.forwardRef(
           <div className="flex items-center justify-between text-xs text-gray-500">
             <span className="flex items-center">
               <Calendar size={12} className="mr-1" />
-              {new Date(project.lastUpdated).toLocaleDateString()}
+              {new Date(project.updated_at).toLocaleDateString()}
             </span>
             <span className="flex items-center">
               <GitBranch size={12} className="mr-1" />
-              {project.category}
+              {project.category || "Other"}
             </span>
           </div>
         </div>
@@ -448,8 +503,26 @@ const FeaturedProjectCard = React.forwardRef(
   }
 );
 
+FeaturedProjectCard.displayName = "FeaturedProjectCard";
+
 const ProjectCard = React.forwardRef(
-  ({ project, index, onDemoClick, onHover, isHovered, getTechIcon }, ref) => {
+  (
+    { project, images, backend, index, onDemoClick, onHover, getTechIcon },
+    ref
+  ) => {
+    const [currentImageIndex, setCurrentImageIndex] = useState(0);
+
+    // Cycle through images for projects that have multiple images
+    useEffect(() => {
+      if (!images) return;
+
+      const imageInterval = setInterval(() => {
+        setCurrentImageIndex((prev) => (prev + 1) % images.length);
+      }, 2000); // Change image every 2 seconds
+
+      return () => clearInterval(imageInterval);
+    }, [images]);
+
     return (
       <motion.div
         ref={ref}
@@ -465,8 +538,10 @@ const ProjectCard = React.forwardRef(
         <div className="relative overflow-hidden">
           <img
             src={
-              project.image ||
-              "/placeholder.svg?height=160&width=400&query=project showcase"
+              images
+                ? images[currentImageIndex]
+                : project.image ||
+                  "/placeholder.svg?height=160&width=400&query=project showcase"
             }
             alt={project.name}
             className="w-full h-40 object-cover transition-transform duration-300 group-hover:scale-105"
@@ -481,7 +556,7 @@ const ProjectCard = React.forwardRef(
             </h3>
             <div className="flex items-center space-x-1 text-gray-400 text-sm">
               <Star size={12} />
-              <span>{project.stars}</span>
+              <span>{project.stargazers_count || 0}</span>
             </div>
           </div>
 
@@ -490,7 +565,7 @@ const ProjectCard = React.forwardRef(
           </p>
 
           <div className="flex flex-wrap gap-1 mb-4">
-            {project.tech.map((tech) => (
+            {(project.technologies || []).map((tech) => (
               <span
                 key={tech}
                 className="flex items-center space-x-1 bg-blue-500/20 text-blue-400 px-2 py-1 rounded text-xs font-medium"
@@ -502,18 +577,37 @@ const ProjectCard = React.forwardRef(
           </div>
 
           <div className="flex justify-between items-center">
-            <motion.button
-              onClick={onDemoClick}
-              className="flex items-center space-x-1 text-blue-400 hover:text-blue-300 transition-colors text-sm font-medium"
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-            >
-              <Eye size={16} />
-              <span>View Demo</span>
-            </motion.button>
+            <div className="flex space-x-2">
+              {(project.demo || project.deployedUrl) && (
+                <motion.a
+                  href={project.demo || project.deployedUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center space-x-1 text-blue-400 hover:text-blue-300 transition-colors text-sm font-medium"
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                >
+                  <Eye size={16} />
+                  <span>Frontend</span>
+                </motion.a>
+              )}
+              {backend && (
+                <motion.a
+                  href={backend}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center space-x-1 text-green-400 hover:text-green-300 transition-colors text-sm font-medium"
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                >
+                  <Code size={16} />
+                  <span>Backend</span>
+                </motion.a>
+              )}
+            </div>
 
             <motion.a
-              href={project.github}
+              href={project.html_url}
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center space-x-1 text-gray-400 hover:text-white transition-colors text-sm"
@@ -529,6 +623,8 @@ const ProjectCard = React.forwardRef(
     );
   }
 );
+
+ProjectCard.displayName = "ProjectCard";
 
 function DemoModal({ project, onClose }) {
   const [loading, setLoading] = useState(true);
@@ -569,7 +665,7 @@ function DemoModal({ project, onClose }) {
           </div>
           <div className="flex items-center space-x-4">
             <motion.a
-              href={project.demo}
+              href={project.demo || project.deployedUrl}
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center space-x-2 bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded-lg text-sm font-medium transition-colors"
@@ -609,7 +705,7 @@ function DemoModal({ project, onClose }) {
               <AlertCircle className="text-red-500 mb-4" size={48} />
               <p className="text-red-400 text-lg mb-4">{error}</p>
               <motion.a
-                href={project.demo}
+                href={project.demo || project.deployedUrl}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="bg-blue-500 hover:bg-blue-600 text-white px-6 py-3 rounded-lg font-medium transition-colors"
@@ -622,7 +718,7 @@ function DemoModal({ project, onClose }) {
           )}
 
           <iframe
-            src={project.demo}
+            src={project.demo || project.deployedUrl}
             title={`${project.name} Demo`}
             className={`w-full h-full border-0 ${
               loading || error ? "hidden" : ""

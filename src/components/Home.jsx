@@ -7,6 +7,62 @@ import { useState, useEffect, useCallback } from "react";
 import SkillsComponent from "./Skills";
 import ExperienceComponent from "./Experience";
 
+// Import local images with correct paths
+import MyntraImage1 from "../images/Myntra/image1.png";
+import MyntraImage2 from "../images/Myntra/image2.png";
+import MyntraImage3 from "../images/Myntra/image3.png";
+import MyntraImage4 from "../images/Myntra/image4.png";
+import MyntraImage5 from "../images/Myntra/image5.png";
+import MyntraImage7 from "../images/Myntra/image7.png";
+
+import SkillUpImage1 from "../images/Skill_Up/image1.png";
+import SkillUpImage2 from "../images/Skill_Up/image2.png";
+import SkillUpImage3 from "../images/Skill_Up/image3.png";
+import SkillUpImage4 from "../images/Skill_Up/image4.png";
+import SkillUpImage5 from "../images/Skill_Up/image5.png";
+import SkillUpImage6 from "../images/Skill_Up/image6.png";
+import SkillUpImage7 from "../images/Skill_Up/image7.png";
+import SkillUpImage8 from "../images/Skill_Up/image8.png";
+import SkillUpImage9 from "../images/Skill_Up/image9.png";
+import SkillUpImage10 from "../images/Skill_Up/image10.png";
+import SkillUpImage11 from "../images/Skill_Up/image11.png";
+import SkillUpImage12 from "../images/Skill_Up/image12.png";
+import SkillUpImage13 from "../images/Skill_Up/image13.png";
+import SkillUpImage14 from "../images/Skill_Up/image14.png";
+import SkillUpImage15 from "../images/Skill_Up/image15.png";
+
+import WorkboardImage1 from "../images/Workboard/image1.png";
+import WorkboardImage2 from "../images/Workboard/image2.png";
+import WorkboardImage3 from "../images/Workboard/image3.png";
+import WorkboardImage4 from "../images/Workboard/image4.png";
+import WorkboardImage5 from "../images/Workboard/image5.png";
+import WorkboardImage6 from "../images/Workboard/image6.png";
+import WorkboardImage7 from "../images/Workboard/image7.png";
+import WorkboardImage8 from "../images/Workboard/image8.png";
+import WorkboardImage9 from "../images/Workboard/image9.png";
+import WorkboardImage10 from "../images/Workboard/image10.png";
+import WorkboardImage11 from "../images/Workboard/image11.png";
+import WorkboardImage12 from "../images/Workboard/image12.png";
+import WorkboardImage13 from "../images/Workboard/image13.png";
+import WorkboardImage14 from "../images/Workboard/image14.png";
+import WorkboardImage15 from "../images/Workboard/image15.png";
+
+import CalendarImage1 from "../images/Market-Seasonality-Explorer/image1.png";
+import CalendarImage2 from "../images/Market-Seasonality-Explorer/image2.png";
+import CalendarImage3 from "../images/Market-Seasonality-Explorer/image3.png";
+import CalendarImage4 from "../images/Market-Seasonality-Explorer/image4.png";
+import CalendarImage5 from "../images/Market-Seasonality-Explorer/image5.png";
+import CalendarImage6 from "../images/Market-Seasonality-Explorer/image6.png";
+import CalendarImage7 from "../images/Market-Seasonality-Explorer/image7.png";
+import CalendarImage8 from "../images/Market-Seasonality-Explorer/image8.png";
+import CalendarImage9 from "../images/Market-Seasonality-Explorer/image9.png";
+import CalendarImage10 from "../images/Market-Seasonality-Explorer/image10.png";
+import CalendarImage11 from "../images/Market-Seasonality-Explorer/image11.png";
+import CalendarImage12 from "../images/Market-Seasonality-Explorer/image12.png";
+import CalendarImage13 from "../images/Market-Seasonality-Explorer/image13.png";
+import CalendarImage14 from "../images/Market-Seasonality-Explorer/image14.png";
+import CalendarImage15 from "../images/Market-Seasonality-Explorer/image15.png";
+
 export default function Home() {
   return (
     <div className="space-y-20">
@@ -18,11 +74,84 @@ export default function Home() {
 }
 
 function Hero() {
+  // Create arrays of images for each project
+  const myntraImages = [
+    MyntraImage1,
+    MyntraImage2,
+    MyntraImage3,
+    MyntraImage4,
+    MyntraImage5,
+    MyntraImage7,
+  ];
+
+  const skillUpImages = [
+    SkillUpImage1,
+    SkillUpImage2,
+    SkillUpImage3,
+    SkillUpImage4,
+    SkillUpImage5,
+    SkillUpImage6,
+    SkillUpImage7,
+    SkillUpImage8,
+    SkillUpImage9,
+    SkillUpImage10,
+    SkillUpImage11,
+    SkillUpImage12,
+    SkillUpImage13,
+    SkillUpImage14,
+    SkillUpImage15,
+  ];
+
+  const workboardImages = [
+    WorkboardImage1,
+    WorkboardImage2,
+    WorkboardImage3,
+    WorkboardImage4,
+    WorkboardImage5,
+    WorkboardImage6,
+    WorkboardImage7,
+    WorkboardImage8,
+    WorkboardImage9,
+    WorkboardImage10,
+    WorkboardImage11,
+    WorkboardImage12,
+    WorkboardImage13,
+    WorkboardImage14,
+    WorkboardImage15,
+  ];
+
+  const calendarImages = [
+    CalendarImage1,
+    CalendarImage2,
+    CalendarImage3,
+    CalendarImage4,
+    CalendarImage5,
+    CalendarImage6,
+    CalendarImage7,
+    CalendarImage8,
+    CalendarImage9,
+    CalendarImage10,
+    CalendarImage11,
+    CalendarImage12,
+    CalendarImage13,
+    CalendarImage14,
+    CalendarImage15,
+  ];
+
   const featuredProjects = [
     {
+      name: "Skill_Up",
+      images: skillUpImages,
+      demo: "https://abhishek6827.github.io/Skill_Up/",
+      github: "https://github.com/Abhishek6827/Skill_Up",
+      tech: ["React", "Firebase"],
+      description:
+        "Created a learning platform enabling users to browse and access online courses.",
+      color: "from-green-500 to-emerald-500",
+    },
+    {
       name: "Myntra Clone",
-      image:
-        "https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=500&h=300&fit=crop&crop=center",
+      images: myntraImages,
       demo: "https://Abhishek6827.github.io/Myntra/",
       github: "https://github.com/Abhishek6827/Myntra",
       tech: ["React", "Redux", "CSS"],
@@ -31,8 +160,7 @@ function Hero() {
     },
     {
       name: "Market Seasonality Calendar",
-      image:
-        "https://images.unsplash.com/photo-1563013544-824ae1b704d3?w=500&h=300&fit=crop&crop=center",
+      images: calendarImages,
       demo: "https://abhishek6827.github.io/Market-Seasonality-Explorer/",
       github: "https://github.com/Abhishek6827/Market-Seasonality-Explorer",
       tech: ["React", "Tailwind CSS", "Recharts", "Binance API"],
@@ -41,28 +169,28 @@ function Hero() {
     },
     {
       name: "Kanban_WorkBoard",
-      image:
-        "https://images.unsplash.com/photo-1611224923853-0139583c060f?w=500&h=300&fit=crop&crop=center",
+      images: workboardImages,
       demo: "https://Abhishek6827.github.io/Kanban_WorkBoard/",
       github: "https://github.com/Abhishek6827/Kanban_WorkBoard",
       tech: ["React", "Redux", "Tailwind"],
       description: "Project management dashboard with collaboration tools",
       color: "from-blue-500 to-cyan-500",
     },
-    {
-      name: "Skill_Up",
-      image:
-        "https://images.unsplash.com/photo-1587145820266-a5951ee6f620?w=500&h=300&fit=crop&crop=center",
-      demo: "https://abhishek6827.github.io/Skill_Up/",
-      github: "https://github.com/Abhishek6827/Skill_Up",
-      tech: ["React", "Firebase"],
-      description:
-        "Created a learning platform enabling users to browse and access online courses.",
-      color: "from-green-500 to-emerald-500",
-    },
+
+    // {
+    //   name: "Roulette Predictor",
+    //   image:
+    //     "https://images.unsplash.com/photo-1501139083538-0139583c060f?w=500&h=300&fit=crop&crop=center",
+    //   demo: "https://Abhishek6827.github.io/Roulette/",
+    //   github: "https://github.com/Abhishek6827/Roulette",
+    //   tech: ["React", "Tailwind CSS"],
+    //   description: "Predict the trends and patterns in Roulette game.",
+    //   color: "from-purple-500 to-violet-500",
+    // },
   ];
 
   const [currentProject, setCurrentProject] = useState(0);
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const [isAutoPlaying, setIsAutoPlaying] = useState(true);
   const [progress, setProgress] = useState(0);
   const [imageLoaded, setImageLoaded] = useState(false);
@@ -91,11 +219,26 @@ function Hero() {
     return () => clearInterval(progressInterval);
   }, [isAutoPlaying, featuredProjects.length]);
 
+  // Cycle through images for the current project
+  useEffect(() => {
+    const currentProjectData = featuredProjects[currentProject];
+    if (!currentProjectData.images) return;
+
+    const imageInterval = setInterval(() => {
+      setCurrentImageIndex(
+        (prev) => (prev + 1) % currentProjectData.images.length
+      );
+    }, 2000); // Change image every 2 seconds
+
+    return () => clearInterval(imageInterval);
+  }, [currentProject]);
+
   // Enhanced project selection with direction tracking
   const handleProjectSelect = useCallback(
     (index) => {
       setDirection(index > currentProject ? 1 : -1);
       setCurrentProject(index);
+      setCurrentImageIndex(0);
       setProgress(0);
       setIsAutoPlaying(false);
       setImageLoaded(false);
@@ -347,20 +490,29 @@ function Hero() {
                     className="relative"
                   >
                     <div className="relative overflow-hidden rounded-lg">
-                      <img
-                        src={
-                          featuredProjects[currentProject].image ||
-                          "/placeholder.svg?height=192&width=400&query=project showcase" ||
-                          "/placeholder.svg" ||
-                          "/placeholder.svg" ||
-                          "/placeholder.svg"
-                        }
-                        alt={featuredProjects[currentProject].name}
-                        className="w-full h-48 object-cover transition-transform duration-500 group-hover:scale-105"
-                        loading="lazy"
-                        onLoad={() => setImageLoaded(true)}
-                        onError={() => setImageLoaded(false)}
-                      />
+                      {featuredProjects[currentProject].images ? (
+                        <img
+                          src={
+                            featuredProjects[currentProject].images[
+                              currentImageIndex
+                            ]
+                          }
+                          alt={featuredProjects[currentProject].name}
+                          className="w-full h-48 object-cover transition-transform duration-500 group-hover:scale-105"
+                          loading="lazy"
+                          onLoad={() => setImageLoaded(true)}
+                          onError={() => setImageLoaded(false)}
+                        />
+                      ) : (
+                        <img
+                          src={featuredProjects[currentProject].image}
+                          alt={featuredProjects[currentProject].name}
+                          className="w-full h-48 object-cover transition-transform duration-500 group-hover:scale-105"
+                          loading="lazy"
+                          onLoad={() => setImageLoaded(true)}
+                          onError={() => setImageLoaded(false)}
+                        />
+                      )}
 
                       {/* Loading state */}
                       {!imageLoaded && (
