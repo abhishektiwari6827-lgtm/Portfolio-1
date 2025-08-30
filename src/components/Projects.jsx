@@ -349,7 +349,6 @@ export default function Projects() {
     "Utility",
     "Business",
     "Education",
-    "Portfolio",
   ];
 
   // Use enhancedProjects instead of Redux projects for demonstration
