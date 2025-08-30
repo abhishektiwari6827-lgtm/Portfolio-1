@@ -63,6 +63,27 @@ import CalendarImage13 from "../images/Market-Seasonality-Explorer/image13.png";
 import CalendarImage14 from "../images/Market-Seasonality-Explorer/image14.png";
 import CalendarImage15 from "../images/Market-Seasonality-Explorer/image15.png";
 
+// Import Elante_Mall images
+import ElanteImage1 from "../images/Elante_Mall/image1.png";
+import ElanteImage2 from "../images/Elante_Mall/image2.png";
+import ElanteImage3 from "../images/Elante_Mall/image3.png";
+import ElanteImage4 from "../images/Elante_Mall/image4.png";
+import ElanteImage5 from "../images/Elante_Mall/image5.png";
+import ElanteImage6 from "../images/Elante_Mall/image6.png";
+import ElanteImage7 from "../images/Elante_Mall/image7.png";
+import ElanteImage8 from "../images/Elante_Mall/image8.png";
+import ElanteImage9 from "../images/Elante_Mall/image9.png";
+import ElanteImage10 from "../images/Elante_Mall/image10.png";
+import ElanteImage11 from "../images/Elante_Mall/image11.png";
+import ElanteImage12 from "../images/Elante_Mall/image12.png";
+import ElanteImage13 from "../images/Elante_Mall/image13.png";
+import ElanteImage14 from "../images/Elante_Mall/image14.png";
+import ElanteImage15 from "../images/Elante_Mall/image15.png";
+import ElanteImage16 from "../images/Elante_Mall/image16.png";
+import ElanteImage17 from "../images/Elante_Mall/image17.png";
+import ElanteImage18 from "../images/Elante_Mall/image18.png";
+import ElanteImage19 from "../images/Elante_Mall/image19.png";
+
 export default function Home() {
   return (
     <div className="space-y-20">
@@ -138,11 +159,34 @@ function Hero() {
     CalendarImage15,
   ];
 
+  // Create array for Elante Mall images
+  const elanteImages = [
+    ElanteImage1,
+    ElanteImage2,
+    ElanteImage3,
+    ElanteImage4,
+    ElanteImage5,
+    ElanteImage6,
+    ElanteImage7,
+    ElanteImage8,
+    ElanteImage9,
+    ElanteImage10,
+    ElanteImage11,
+    ElanteImage12,
+    ElanteImage13,
+    ElanteImage14,
+    ElanteImage15,
+    ElanteImage16,
+    ElanteImage17,
+    ElanteImage18,
+    ElanteImage19,
+  ];
+
   const featuredProjects = [
     {
       name: "Skill_Up",
       images: skillUpImages,
-      demo: "https://abhishek6827.github.io/Skill_Up/",
+      demo: "https://Abhishek6827.github.io/Skill_Up/",
       github: "https://github.com/Abhishek6827/Skill_Up",
       tech: ["React", "Firebase"],
       description:
@@ -176,17 +220,16 @@ function Hero() {
       description: "Project management dashboard with collaboration tools",
       color: "from-blue-500 to-cyan-500",
     },
-
-    // {
-    //   name: "Roulette Predictor",
-    //   image:
-    //     "https://images.unsplash.com/photo-1501139083538-0139583c060f?w=500&h=300&fit=crop&crop=center",
-    //   demo: "https://Abhishek6827.github.io/Roulette/",
-    //   github: "https://github.com/Abhishek6827/Roulette",
-    //   tech: ["React", "Tailwind CSS"],
-    //   description: "Predict the trends and patterns in Roulette game.",
-    //   color: "from-purple-500 to-violet-500",
-    // },
+    {
+      name: "Elante Mall",
+      images: elanteImages,
+      demo: "https://Abhishek6827.github.io/Elante_Mall/",
+      github: "https://github.com/Abhishek6827/Elante_Mall",
+      tech: ["React", "CSS", "JavaScript"],
+      description:
+        "Shopping mall website with store directory and interactive map",
+      color: "from-purple-500 to-violet-500",
+    },
   ];
 
   const [currentProject, setCurrentProject] = useState(0);
@@ -466,6 +509,7 @@ function Hero() {
                         ? "bg-blue-500 text-white"
                         : "bg-gray-600 text-gray-300"
                     }`}
+                    title={isAutoPlaying ? "Pause auto-play" : "Play auto-play"}
                   >
                     {isAutoPlaying ? "⏸" : "▶"}
                   </button>
@@ -527,12 +571,14 @@ function Hero() {
                       <button
                         onClick={goToPrevious}
                         className="absolute left-2 top-1/2 transform -translate-y-1/2 bg-black/50 hover:bg-black/70 text-white p-2 rounded-full opacity-0 group-hover:opacity-100 transition-all duration-300"
+                        title="Previous project"
                       >
                         <ChevronLeft size={16} />
                       </button>
                       <button
                         onClick={goToNext}
                         className="absolute right-2 top-1/2 transform -translate-y-1/2 bg-black/50 hover:bg-black/70 text-white p-2 rounded-full opacity-0 group-hover:opacity-100 transition-all duration-300"
+                        title="Next project"
                       >
                         <ChevronRight size={16} />
                       </button>
@@ -546,6 +592,7 @@ function Hero() {
                             className="flex items-center space-x-1 bg-blue-500 hover:bg-blue-600 text-white px-3 py-1 rounded-full text-sm transition-colors"
                             whileHover={{ scale: 1.05 }}
                             whileTap={{ scale: 0.95 }}
+                            title="View live demo"
                           >
                             <Eye size={14} />
                             <span>Live Demo</span>
@@ -557,6 +604,7 @@ function Hero() {
                             className="flex items-center space-x-1 bg-gray-700 hover:bg-gray-600 text-white px-3 py-1 rounded-full text-sm transition-colors"
                             whileHover={{ scale: 1.05 }}
                             whileTap={{ scale: 0.95 }}
+                            title="View source code"
                           >
                             <FaGithub size={14} />
                             <span>Code</span>
