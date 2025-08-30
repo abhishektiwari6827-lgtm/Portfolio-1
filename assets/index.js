@@ -8907,7 +8907,7 @@ var Kv = { usingClientEntryPoint: !1, Events: [Ei, Fn, yo, hp, pp, $u] },
     scheduleRoot: null,
     setRefreshHandler: null,
     getCurrentFiber: null,
-    reconcilerVersion: "18.3.1-next-f1338f8080-20240426",
+    reconcilerVersion: "18.3.1-next-f1338f8080-20250426",
   };
 if (typeof __REACT_DEVTOOLS_GLOBAL_HOOK__ < "u") {
   var ns = __REACT_DEVTOOLS_GLOBAL_HOOK__;
@@ -9001,7 +9001,7 @@ Ie.unstable_renderSubtreeIntoContainer = function (e, t, n, r) {
   if (e == null || e._reactInternals === void 0) throw Error(E(38));
   return To(e, t, n, !1, r);
 };
-Ie.version = "18.3.1-next-f1338f8080-20240426";
+Ie.version = "18.3.1-next-f1338f8080-20250426";
 function qm() {
   if (
     !(
@@ -11693,11 +11693,11 @@ const ws = P0("projects/fetchProjects", async () => {
     if (!e.ok) throw new Error("Failed to fetch projects");
     const t = await e.json(),
       n = {
-        "Myntra-Clone": {
+        Myntra: {
           description:
             "A fully responsive e-commerce fashion website clone with modern UI/UX, product catalog, shopping cart, and user authentication features.",
           technologies: ["React", "Redux", "CSS", "JavaScript"],
-          demo: "https://Abhishek6827.github.io/Myntra-Clone/",
+          demo: "https://Abhishek6827.github.io/Myntra/",
           category: "E-commerce",
           featured: !0,
           image:
@@ -11713,11 +11713,11 @@ const ws = P0("projects/fetchProjects", async () => {
           image:
             "https://images.unsplash.com/photo-1563013544-824ae1b704d3?w=500&h=300&fit=crop&crop=center",
         },
-        WorkBoard: {
+        Kanban_WorkBoard: {
           description:
             "A project management dashboard with task tracking, team collaboration features, and intuitive drag-and-drop interface.",
           technologies: ["React", "Redux", "Tailwind CSS", "JavaScript"],
-          demo: "https://Abhishek6827.github.io/WorkBoard/",
+          demo: "https://Abhishek6827.github.io/Kanban_WorkBoard/",
           category: "Productivity",
           featured: !0,
           image:
@@ -11775,9 +11775,9 @@ const ws = P0("projects/fetchProjects", async () => {
         },
       },
       r = [
-        "Myntra-Clone",
+        "Myntra",
         "Amazon-Clone",
-        "WorkBoard",
+        "Kanban_WorkBoard",
         "Skill_Up",
         "Elante_Mall",
         "Bharat-Clock",
@@ -19683,7 +19683,7 @@ function cg() {
     {
       title: "Full-Stack Developer Intern",
       company: "Hoping Minds",
-      period: "01/2024 - 06/2024",
+      period: "01/2025 - 06/2025",
       responsibilities: [
         "Developed and maintained web applications using React, Redux, and Django",
         "Collaborated with cross-functional teams to deliver high-quality software solutions",
@@ -19695,7 +19695,7 @@ function cg() {
     {
       title: "Web Developer",
       company: "Quizario",
-      period: "11/2023 - 01/2024",
+      period: "11/2023 - 01/2025",
       responsibilities: [
         "Built interactive quiz applications with modern web technologies",
         "Coordinated with team members to ensure project deliverables",
@@ -19792,8 +19792,8 @@ function R8() {
         name: "Myntra Clone",
         image:
           "https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=500&h=300&fit=crop&crop=center",
-        demo: "https://Abhishek6827.github.io/Myntra-Clone/",
-        github: "https://github.com/Abhishek6827/Myntra-Clone",
+        demo: "https://Abhishek6827.github.io/Myntra/",
+        github: "https://github.com/Abhishek6827/Myntra",
         tech: ["React", "Redux", "CSS"],
         description: "Fashion e-commerce platform with modern UI",
         color: "from-pink-500 to-rose-500",
@@ -19809,11 +19809,11 @@ function R8() {
         color: "from-orange-500 to-amber-500",
       },
       {
-        name: "WorkBoard",
+        name: "Kanban_WorkBoard",
         image:
           "https://images.unsplash.com/photo-1611224923853-0139583c060f?w=500&h=300&fit=crop&crop=center",
-        demo: "https://Abhishek6827.github.io/WorkBoard/",
-        github: "https://github.com/Abhishek6827/WorkBoard",
+        demo: "https://Abhishek6827.github.io/Kanban_WorkBoard/",
+        github: "https://github.com/Abhishek6827/Kanban_WorkBoard",
         tech: ["React", "Redux", "Tailwind"],
         description: "Project management dashboard with collaboration tools",
         color: "from-blue-500 to-cyan-500",
@@ -20421,13 +20421,13 @@ function A8() {
           "A fully responsive e-commerce fashion website clone with modern UI/UX, product catalog, shopping cart, and user authentication features.",
         image:
           "https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=500&h=300&fit=crop&crop=center",
-        demo: "https://Abhishek6827.github.io/Myntra-Clone/",
-        github: "https://github.com/Abhishek6827/Myntra-Clone",
+        demo: "https://Abhishek6827.github.io/Myntra/",
+        github: "https://github.com/Abhishek6827/Myntra",
         tech: ["React", "Redux", "CSS", "JavaScript"],
         category: "E-commerce",
         featured: !0,
         stars: 12,
-        lastUpdated: "2024-01-15",
+        lastUpdated: "2025-01-15",
       },
       {
         id: 2,
@@ -20442,22 +20442,22 @@ function A8() {
         category: "E-commerce",
         featured: !0,
         stars: 8,
-        lastUpdated: "2024-01-10",
+        lastUpdated: "2025-01-10",
       },
       {
         id: 3,
-        name: "WorkBoard",
+        name: "Kanban_WorkBoard",
         description:
           "A project management dashboard with task tracking, team collaboration features, and intuitive drag-and-drop interface.",
         image:
           "https://images.unsplash.com/photo-1611224923853-0139583c060f?w=500&h=300&fit=crop&crop=center",
-        demo: "https://Abhishek6827.github.io/WorkBoard/",
-        github: "https://github.com/Abhishek6827/WorkBoard",
+        demo: "https://Abhishek6827.github.io/Kanban_WorkBoard/",
+        github: "https://github.com/Abhishek6827/Kanban_WorkBoard",
         tech: ["React", "Redux", "Tailwind CSS", "JavaScript"],
         category: "Productivity",
         featured: !0,
         stars: 15,
-        lastUpdated: "2024-02-01",
+        lastUpdated: "2025-02-01",
       },
       {
         id: 4,
@@ -20502,7 +20502,7 @@ function A8() {
         category: "Business",
         featured: !1,
         stars: 7,
-        lastUpdated: "2024-01-05",
+        lastUpdated: "2025-01-05",
       },
       {
         id: 7,
@@ -20517,7 +20517,7 @@ function A8() {
         category: "Education",
         featured: !1,
         stars: 10,
-        lastUpdated: "2024-01-20",
+        lastUpdated: "2025-01-20",
       },
     ];
   S.useEffect(() => {
@@ -20811,19 +20811,17 @@ const L8 = tt.forwardRef(
               d.jsxs("div", {
                 className: "flex flex-wrap gap-2 mb-4",
                 children: [
-                  e.tech
-                    .slice(0, 3)
-                    .map((a) =>
-                      d.jsxs(
-                        "span",
-                        {
-                          className:
-                            "flex items-center space-x-1 bg-gray-700 text-gray-300 px-2 py-1 rounded text-xs font-medium",
-                          children: [s(a), d.jsx("span", { children: a })],
-                        },
-                        a
-                      )
-                    ),
+                  e.tech.slice(0, 3).map((a) =>
+                    d.jsxs(
+                      "span",
+                      {
+                        className:
+                          "flex items-center space-x-1 bg-gray-700 text-gray-300 px-2 py-1 rounded text-xs font-medium",
+                        children: [s(a), d.jsx("span", { children: a })],
+                      },
+                      a
+                    )
+                  ),
                   e.tech.length > 3 &&
                     d.jsxs("span", {
                       className:
@@ -21439,7 +21437,7 @@ function J8() {
       {
         title: "React Developer Certification",
         issuer: "Meta",
-        date: "2024",
+        date: "2025",
         description:
           "Advanced React concepts including hooks, context, and performance optimization",
         status: "completed",

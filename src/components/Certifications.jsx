@@ -11,7 +11,7 @@ export default function Certifications() {
     {
       title: "React Developer Certification",
       issuer: "Meta",
-      date: "2024",
+      date: "2025",
       description:
         "Advanced React concepts including hooks, context, and performance optimization",
       status: "completed",

@@ -6,16 +6,16 @@ This guide will help you deploy all your projects to GitHub Pages and make them 
 
 ## Your Projects Status
 
-| Project      | Type       | Status          | Live URL                                     |
-| ------------ | ---------- | --------------- | -------------------------------------------- |
-| Myntra-Clone | React      | Ready to Deploy | https://Abhishek6827.github.io/Myntra-Clone/ |
-| Amazon-Clone | React      | Ready to Deploy | https://Abhishek6827.github.io/Amazon-Clone/ |
-| WorkBoard    | React      | Ready to Deploy | https://Abhishek6827.github.io/WorkBoard/    |
-| Bharat-Clock | Vanilla JS | Ready to Deploy | https://Abhishek6827.github.io/Bharat-Clock/ |
-| Calculator   | Vanilla JS | Ready to Deploy | https://Abhishek6827.github.io/Calculator/   |
-| Elante_Mall  | React      | Ready to Deploy | https://Abhishek6827.github.io/Elante_Mall/  |
-| Skill_Up     | React      | Ready to Deploy | https://Abhishek6827.github.io/Skill_Up/     |
-| Portfolio    | React      | ✅ Deployed     | https://Abhishek6827.github.io/Portfolio/    |
+| Project          | Type       | Status          | Live URL                                         |
+| ---------------- | ---------- | --------------- | ------------------------------------------------ |
+| Myntra           | React      | Ready to Deploy | https://Abhishek6827.github.io/Myntra/           |
+| Amazon-Clone     | React      | Ready to Deploy | https://Abhishek6827.github.io/Amazon-Clone/     |
+| Kanban_WorkBoard | React      | Ready to Deploy | https://Abhishek6827.github.io/Kanban_WorkBoard/ |
+| Bharat-Clock     | Vanilla JS | Ready to Deploy | https://Abhishek6827.github.io/Bharat-Clock/     |
+| Calculator       | Vanilla JS | Ready to Deploy | https://Abhishek6827.github.io/Calculator/       |
+| Elante_Mall      | React      | Ready to Deploy | https://Abhishek6827.github.io/Elante_Mall/      |
+| Skill_Up         | React      | Ready to Deploy | https://Abhishek6827.github.io/Skill_Up/         |
+| Portfolio        | React      | ✅ Deployed     | https://Abhishek6827.github.io/Portfolio/        |
 
 ## 📋 Prerequisites
 
@@ -80,13 +80,13 @@ Your project will be live at: `https://Abhishek6827.github.io/[REPOSITORY-NAME]/
 
 Run these commands for each React project:
 
-### Myntra-Clone
+### Myntra
 
 \`\`\`bash
-cd Myntra-Clone
+cd Myntra
 npm install --save-dev gh-pages
 
-# Update package.json with homepage: "https://Abhishek6827.github.io/Myntra-Clone"
+# Update package.json with homepage: "https://Abhishek6827.github.io/Myntra"
 
 npm run deploy
 \`\`\`
@@ -102,13 +102,13 @@ npm install --save-dev gh-pages
 npm run deploy
 \`\`\`
 
-### WorkBoard
+### Kanban_WorkBoard
 
 \`\`\`bash
-cd WorkBoard
+cd Kanban_WorkBoard
 npm install --save-dev gh-pages
 
-# Update package.json with homepage: "https://Abhishek6827.github.io/WorkBoard"
+# Update package.json with homepage: "https://Abhishek6827.github.io/Kanban_WorkBoard"
 
 npm run deploy
 \`\`\`

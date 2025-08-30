@@ -23,51 +23,42 @@ function Hero() {
       name: "Myntra Clone",
       image:
         "https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=500&h=300&fit=crop&crop=center",
-      demo: "https://Abhishek6827.github.io/Myntra-Clone/",
-      github: "https://github.com/Abhishek6827/Myntra-Clone",
+      demo: "https://Abhishek6827.github.io/Myntra/",
+      github: "https://github.com/Abhishek6827/Myntra",
       tech: ["React", "Redux", "CSS"],
       description: "Fashion e-commerce platform with modern UI",
       color: "from-pink-500 to-rose-500",
     },
     {
-      name: "Amazon Clone",
+      name: "Market Seasonality Calendar",
       image:
         "https://images.unsplash.com/photo-1563013544-824ae1b704d3?w=500&h=300&fit=crop&crop=center",
-      demo: "https://Abhishek6827.github.io/Amazon-Clone/",
-      github: "https://github.com/Abhishek6827/Amazon-Clone",
-      tech: ["React", "JavaScript", "CSS"],
-      description: "E-commerce platform with advanced features",
+      demo: "https://abhishek6827.github.io/Market-Seasonality-Explorer/",
+      github: "https://github.com/Abhishek6827/Market-Seasonality-Explorer",
+      tech: ["React", "Tailwind CSS", "Recharts", "Binance API"],
+      description: "Calendar highlighting seasonal market trends",
       color: "from-orange-500 to-amber-500",
     },
     {
-      name: "WorkBoard",
+      name: "Kanban_WorkBoard",
       image:
         "https://images.unsplash.com/photo-1611224923853-0139583c060f?w=500&h=300&fit=crop&crop=center",
-      demo: "https://Abhishek6827.github.io/WorkBoard/",
-      github: "https://github.com/Abhishek6827/WorkBoard",
+      demo: "https://Abhishek6827.github.io/Kanban_WorkBoard/",
+      github: "https://github.com/Abhishek6827/Kanban_WorkBoard",
       tech: ["React", "Redux", "Tailwind"],
       description: "Project management dashboard with collaboration tools",
       color: "from-blue-500 to-cyan-500",
     },
     {
-      name: "Bharat Clock",
+      name: "Skill_Up",
       image:
         "https://images.unsplash.com/photo-1587145820266-a5951ee6f620?w=500&h=300&fit=crop&crop=center",
-      demo: "https://Abhishek6827.github.io/Bharat-Clock/",
-      github: "https://github.com/Abhishek6827/Bharat-Clock",
-      tech: ["JavaScript", "CSS", "HTML"],
-      description: "Beautiful digital clock with Indian time zones",
+      demo: "https://abhishek6827.github.io/Skill_Up/",
+      github: "https://github.com/Abhishek6827/Skill_Up",
+      tech: ["React", "Firebase"],
+      description:
+        "Created a learning platform enabling users to browse and access online courses.",
       color: "from-green-500 to-emerald-500",
-    },
-    {
-      name: "Calculator",
-      image:
-        "https://images.unsplash.com/photo-1501139083538-0139583c060f?w=500&h=300&fit=crop&crop=center",
-      demo: "https://Abhishek6827.github.io/Calculator/",
-      github: "https://github.com/Abhishek6827/Calculator",
-      tech: ["JavaScript", "CSS", "HTML"],
-      description: "Modern calculator with scientific functions",
-      color: "from-purple-500 to-violet-500",
     },
   ];
 

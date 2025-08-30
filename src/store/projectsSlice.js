@@ -13,11 +13,11 @@ export const fetchProjects = createAsyncThunk(
     const data = await response.json();
 
     const projectDetails = {
-      "Myntra-Clone": {
+      Myntra: {
         description:
           "A fully responsive e-commerce fashion website clone with modern UI/UX, product catalog, shopping cart, and user authentication features.",
         technologies: ["React", "Redux", "CSS", "JavaScript"],
-        demo: "https://Abhishek6827.github.io/Myntra-Clone/",
+        demo: "https://Abhishek6827.github.io/Myntra/",
         category: "E-commerce",
         featured: true,
         image:
@@ -33,11 +33,11 @@ export const fetchProjects = createAsyncThunk(
         image:
           "https://images.unsplash.com/photo-1563013544-824ae1b704d3?w=500&h=300&fit=crop&crop=center",
       },
-      WorkBoard: {
+      Kanban_WorkBoard: {
         description:
           "A project management dashboard with task tracking, team collaboration features, and intuitive drag-and-drop interface.",
         technologies: ["React", "Redux", "Tailwind CSS", "JavaScript"],
-        demo: "https://Abhishek6827.github.io/WorkBoard/",
+        demo: "https://Abhishek6827.github.io/Kanban_WorkBoard/",
         category: "Productivity",
         featured: true,
         image:
@@ -96,9 +96,9 @@ export const fetchProjects = createAsyncThunk(
     };
 
     const orderedProjects = [
-      "Myntra-Clone",
+      "Myntra",
       "Amazon-Clone",
-      "WorkBoard",
+      "Kanban_WorkBoard",
       "Skill_Up",
       "Elante_Mall",
       "Bharat-Clock",
