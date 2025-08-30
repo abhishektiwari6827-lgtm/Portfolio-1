@@ -36,6 +36,26 @@ import MyntraImage4 from "../images/Myntra/image4.png";
 import MyntraImage5 from "../images/Myntra/image5.png";
 import MyntraImage6 from "../images/Myntra/image6.png";
 
+import ElanteImage1 from "../images/Elante_Mall/image1.png";
+import ElanteImage2 from "../images/Elante_Mall/image2.png";
+import ElanteImage3 from "../images/Elante_Mall/image3.png";
+import ElanteImage4 from "../images/Elante_Mall/image4.png";
+import ElanteImage5 from "../images/Elante_Mall/image5.png";
+import ElanteImage6 from "../images/Elante_Mall/image6.png";
+import ElanteImage7 from "../images/Elante_Mall/image7.png";
+import ElanteImage8 from "../images/Elante_Mall/image8.png";
+import ElanteImage9 from "../images/Elante_Mall/image9.png";
+import ElanteImage10 from "../images/Elante_Mall/image10.png";
+import ElanteImage11 from "../images/Elante_Mall/image11.png";
+import ElanteImage12 from "../images/Elante_Mall/image12.png";
+import ElanteImage13 from "../images/Elante_Mall/image13.png";
+import ElanteImage14 from "../images/Elante_Mall/image14.png";
+import ElanteImage15 from "../images/Elante_Mall/image15.png";
+import ElanteImage16 from "../images/Elante_Mall/image16.png";
+import ElanteImage17 from "../images/Elante_Mall/image17.png";
+import ElanteImage18 from "../images/Elante_Mall/image18.png";
+import ElanteImage19 from "../images/Elante_Mall/image19.png";
+
 import SkillUpImage1 from "../images/Skill_Up/image1.png";
 import SkillUpImage2 from "../images/Skill_Up/image2.png";
 import SkillUpImage3 from "../images/Skill_Up/image3.png";
@@ -164,9 +184,9 @@ const enhancedProjects = [
     demo: "https://Abhishek6827.github.io/Elante_Mall/",
     backend: null,
     github: "https://github.com/Abhishek6827/Elante_Mall",
-    technologies: ["React", "CSS", "JavaScript"],
+    technologies: ["JavaScript", "HTML", "CSS"],
     category: "Business",
-    featured: false,
+    featured: true, // Changed to true to make it featured
     stargazers_count: 7,
     updated_at: "2025-01-05",
   },
@@ -218,6 +238,28 @@ export default function Projects() {
     MyntraImage4,
     MyntraImage5,
     MyntraImage6,
+  ];
+
+  const elanteImages = [
+    ElanteImage1,
+    ElanteImage2,
+    ElanteImage3,
+    ElanteImage4,
+    ElanteImage5,
+    ElanteImage6,
+    ElanteImage7,
+    ElanteImage8,
+    ElanteImage9,
+    ElanteImage10,
+    ElanteImage11,
+    ElanteImage12,
+    ElanteImage13,
+    ElanteImage14,
+    ElanteImage15,
+    ElanteImage16,
+    ElanteImage17,
+    ElanteImage18,
+    ElanteImage19,
   ];
 
   const skillUpImages = [
@@ -281,6 +323,7 @@ export default function Projects() {
       Skill_Up: skillUpImages,
       Kanban_WorkBoard: workboardImages,
       "Market-Seasonality-Explorer": calendarImages,
+      "Elante Mall": elanteImages,
     };
     return imageMap[projectName] || null;
   };
