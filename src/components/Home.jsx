@@ -13,7 +13,7 @@ import MyntraImage2 from "../images/Myntra/image2.png";
 import MyntraImage3 from "../images/Myntra/image3.png";
 import MyntraImage4 from "../images/Myntra/image4.png";
 import MyntraImage5 from "../images/Myntra/image5.png";
-import MyntraImage7 from "../images/Myntra/image7.png";
+import MyntraImage6 from "../images/Myntra/image6.png";
 
 import SkillUpImage1 from "../images/Skill_Up/image1.png";
 import SkillUpImage2 from "../images/Skill_Up/image2.png";
@@ -81,7 +81,7 @@ function Hero() {
     MyntraImage3,
     MyntraImage4,
     MyntraImage5,
-    MyntraImage7,
+    MyntraImage6,
   ];
 
   const skillUpImages = [

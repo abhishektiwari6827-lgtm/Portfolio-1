@@ -84,6 +84,122 @@ import CalendarImage13 from "../images/Market-Seasonality-Explorer/image13.png";
 import CalendarImage14 from "../images/Market-Seasonality-Explorer/image14.png";
 import CalendarImage15 from "../images/Market-Seasonality-Explorer/image15.png";
 
+// Enhanced projects data from the second code
+const enhancedProjects = [
+  {
+    id: 1,
+    name: "Myntra Clone",
+    description:
+      "A fully responsive e-commerce fashion website clone with modern UI/UX, product catalog, shopping cart, and user authentication features.",
+    demo: "https://Abhishek6827.github.io/Myntra/",
+    backend: null,
+    github: "https://github.com/Abhishek6827/Myntra",
+    technologies: ["React", "Redux", "CSS", "JavaScript"],
+    category: "E-commerce",
+    featured: true,
+    stargazers_count: 12,
+    updated_at: "2025-01-15",
+  },
+  {
+    id: 2,
+    name: "Amazon Clone",
+    description:
+      "A comprehensive Amazon-inspired e-commerce platform with product listings, search functionality, and responsive design.",
+    demo: "https://Abhishek6827.github.io/Amazon-Clone/",
+    backend: null,
+    github: "https://github.com/Abhishek6827/Amazon-Clone",
+    technologies: ["React", "JavaScript", "CSS", "HTML"],
+    category: "E-commerce",
+    featured: false,
+    stargazers_count: 8,
+    updated_at: "2025-01-10",
+  },
+  {
+    id: 3,
+    name: "Skill_Up",
+    description:
+      "An educational platform for skill development with course listings, progress tracking, and interactive learning modules.",
+    demo: "https://Abhishek6827.github.io/Skill_Up/",
+    backend: null,
+    github: "https://github.com/Abhishek6827/Skill_Up",
+    technologies: ["React", "Bootstrap", "JavaScript"],
+    category: "Education",
+    featured: true,
+    stargazers_count: 10,
+    updated_at: "2025-01-20",
+  },
+  {
+    id: 4,
+    name: "Bharat Clock",
+    description:
+      "A beautiful digital clock application showing Indian time zones with elegant design and smooth animations.",
+    demo: "https://Abhishek6827.github.io/Bharat-Clock/",
+    backend: null,
+    github: "https://github.com/Abhishek6827/Bharat-Clock",
+    technologies: ["JavaScript", "CSS", "HTML"],
+    category: "Utility",
+    featured: false,
+    stargazers_count: 5,
+    updated_at: "2023-12-20",
+  },
+  {
+    id: 5,
+    name: "Calculator",
+    description:
+      "A modern calculator application with scientific functions, memory operations, and responsive design.",
+    demo: "https://Abhishek6827.github.io/Calculator/",
+    backend: null,
+    github: "https://github.com/Abhishek6827/Calculator",
+    technologies: ["JavaScript", "CSS", "HTML"],
+    category: "Utility",
+    featured: false,
+    stargazers_count: 3,
+    updated_at: "2023-11-15",
+  },
+  {
+    id: 6,
+    name: "Elante Mall",
+    description:
+      "A shopping mall website with store directory, event listings, and interactive mall map functionality.",
+    demo: "https://Abhishek6827.github.io/Elante_Mall/",
+    backend: null,
+    github: "https://github.com/Abhishek6827/Elante_Mall",
+    technologies: ["React", "CSS", "JavaScript"],
+    category: "Business",
+    featured: false,
+    stargazers_count: 7,
+    updated_at: "2025-01-05",
+  },
+  {
+    id: 7,
+    name: "Kanban_WorkBoard",
+    description:
+      "A full-stack project management dashboard with Django backend and React frontend. Features task tracking, team collaboration, and intuitive drag-and-drop interface.",
+    demo: "https://Abhishek6827.github.io/Kanban_WorkBoard/",
+    backend: "https://abhishektiwari6827.pythonanywhere.com/",
+    github: "https://github.com/Abhishek6827/Kanban_WorkBoard",
+    technologies: ["Django", "React", "Redux", "Tailwind CSS"],
+    category: "Productivity",
+    featured: true,
+    stargazers_count: 15,
+    updated_at: "2025-08-30",
+  },
+  {
+    id: 8,
+    name: "Market-Seasonality-Explorer",
+    description:
+      "A calendar application highlighting seasonal market trends and patterns for traders and investors.",
+    demo: "https://abhishek6827.github.io/Market-Seasonality-Explorer/",
+    backend: null,
+    github: "https://github.com/Abhishek6827/Market-Seasonality-Explorer",
+    technologies: ["React", "Tailwind CSS", "Recharts", "Binance API"],
+    category: "Productivity",
+    featured: true,
+    stargazers_count: 15,
+    updated_at: "2025-08-30",
+  },
+];
+
 export default function Projects() {
   const dispatch = useDispatch();
   const projects = useSelector(selectAllProjects);
@@ -161,7 +277,7 @@ export default function Projects() {
   // Map local images to projects
   const getProjectImages = (projectName) => {
     const imageMap = {
-      Myntra: myntraImages,
+      "Myntra Clone": myntraImages,
       Skill_Up: skillUpImages,
       Kanban_WorkBoard: workboardImages,
       "Market-Seasonality-Explorer": calendarImages,
@@ -193,10 +309,16 @@ export default function Projects() {
     "Portfolio",
   ];
 
+  // Use enhancedProjects instead of Redux projects for demonstration
+  const projectsToUse = enhancedProjects;
+  const featuredProjectsToUse = enhancedProjects.filter(
+    (project) => project.featured
+  );
+
   const filteredProjects =
     filter === "all"
-      ? projects
-      : projects.filter((project) => project.category === filter);
+      ? projectsToUse
+      : projectsToUse.filter((project) => project.category === filter);
 
   const handleDemoClick = (project) => {
     if (project.demo || project.deployedUrl) {
@@ -280,7 +402,7 @@ export default function Projects() {
           Featured Projects
         </h3>
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {featuredProjects.map((project, index) => (
+          {featuredProjectsToUse.map((project, index) => (
             <FeaturedProjectCard
               key={project.id}
               project={project}
@@ -398,8 +520,7 @@ const FeaturedProjectCard = React.forwardRef(
             src={
               images
                 ? images[currentImageIndex]
-                : project.image ||
-                  "/placeholder.svg?height=192&width=400&query=project showcase"
+                : "/placeholder.svg?height=192&width=400&query=project showcase"
             }
             alt={project.name}
             className="w-full h-48 object-cover transition-transform duration-500 group-hover:scale-110"
@@ -425,7 +546,7 @@ const FeaturedProjectCard = React.forwardRef(
                   whileTap={{ scale: 0.95 }}
                 >
                   <Eye size={16} />
-                  <span>Frontend</span>
+                  <span>Live Demo</span>
                 </motion.a>
               )}
               {backend && (
@@ -442,7 +563,7 @@ const FeaturedProjectCard = React.forwardRef(
                 </motion.a>
               )}
               <motion.a
-                href={project.html_url}
+                href={project.github}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center space-x-1 bg-gray-700 hover:bg-gray-600 text-white px-3 py-2 rounded-lg text-sm font-medium transition-colors"
@@ -540,8 +661,7 @@ const ProjectCard = React.forwardRef(
             src={
               images
                 ? images[currentImageIndex]
-                : project.image ||
-                  "/placeholder.svg?height=160&width=400&query=project showcase"
+                : "/placeholder.svg?height=160&width=400&query=project showcase"
             }
             alt={project.name}
             className="w-full h-40 object-cover transition-transform duration-300 group-hover:scale-105"
@@ -588,7 +708,7 @@ const ProjectCard = React.forwardRef(
                   whileTap={{ scale: 0.95 }}
                 >
                   <Eye size={16} />
-                  <span>Frontend</span>
+                  <span>Live Demo</span>
                 </motion.a>
               )}
               {backend && (
@@ -601,13 +721,13 @@ const ProjectCard = React.forwardRef(
                   whileTap={{ scale: 0.95 }}
                 >
                   <Code size={16} />
-                  <span>Backend</span>
+                  <span>Get Started</span>
                 </motion.a>
               )}
             </div>
 
             <motion.a
-              href={project.html_url}
+              href={project.github}
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center space-x-1 text-gray-400 hover:text-white transition-colors text-sm"
