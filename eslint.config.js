@@ -5,25 +5,28 @@ import reactHooks from "eslint-plugin-react-hooks";
 import reactRefresh from "eslint-plugin-react-refresh";
 
 export default [
-  { ignores: ["dist"] },
+  { ignores: ["dist", "*.config.js"] }, // Config files bhi ignore karo
   {
     files: ["**/*.{js,jsx}"],
     languageOptions: {
       ecmaVersion: 2020,
       globals: {
         ...globals.browser,
-        // Add any other global variables you use
+        ...globals.node, // Node.js globals bhi add karo
         process: "readonly",
       },
       parserOptions: {
         ecmaVersion: "latest",
-        ecmaFeatures: { jsx: true },
+        ecmaFeatures: {
+          jsx: true,
+          impliedStrict: true, // Strict mode by default
+        },
         sourceType: "module",
       },
     },
     settings: {
       react: {
-        version: "detect", // Automatically detect React version
+        version: "detect",
       },
     },
     plugins: {
@@ -37,11 +40,21 @@ export default [
       ...react.configs["jsx-runtime"].rules,
       ...reactHooks.configs.recommended.rules,
 
-      // Turn off common warning rules
-      "react/jsx-no-target-blank": "off",
-      "react/prop-types": "off", // Disable prop-types validation
-      "no-unused-vars": "warn", // Make unused vars warnings instead of errors
-      "react/react-in-jsx-scope": "off", // Not needed with React 17+ JSX transform
+      // Custom rules
+      "react/jsx-no-target-blank": "warn", // Warning instead of off
+      "react/prop-types": "off",
+      "no-unused-vars": [
+        "warn",
+        {
+          argsIgnorePattern: "^_",
+          varsIgnorePattern: "^_",
+        },
+      ], // _ prefix wale variables ignore karo
+      "react/react-in-jsx-scope": "off",
+
+      // Additional useful rules
+      "react/jsx-key": "error", // Missing key warnings
+      "react-hooks/exhaustive-deps": "warn", // Dependency array warnings
 
       "react-refresh/only-export-components": [
         "warn",

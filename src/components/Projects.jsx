@@ -111,7 +111,7 @@ const enhancedProjects = [
     name: "Myntra Clone",
     description:
       "A fully responsive e-commerce fashion website clone with modern UI/UX, product catalog, shopping cart, and user authentication features.",
-    demo: "https://Abhishek6827.github.io/Myntra/",
+    // demo: "https://Abhishek6827.github.io/Myntra/",
     backend: null,
     github: "https://github.com/Abhishek6827/Myntra",
     technologies: ["React", "Redux", "CSS", "JavaScript"],
@@ -125,7 +125,7 @@ const enhancedProjects = [
     name: "Amazon",
     description:
       "A comprehensive Amazon-inspired e-commerce platform with product listings, search functionality, and responsive design.",
-    demo: "https://Abhishek6827.github.io/Amazon/",
+    // demo: "https://Abhishek6827.github.io/Amazon/",
     backend: null,
     github: "https://github.com/Abhishek6827/Amazon",
     technologies: ["React", "JavaScript", "CSS", "HTML"],
@@ -139,7 +139,7 @@ const enhancedProjects = [
     name: "Skill_Up",
     description:
       "An educational platform for skill development with course listings, progress tracking, and interactive learning modules.",
-    demo: "https://Abhishek6827.github.io/Skill_Up/",
+    // demo: "https://Abhishek6827.github.io/Skill_Up/",
     backend: null,
     github: "https://github.com/Abhishek6827/Skill_Up",
     technologies: ["React", "Bootstrap", "JavaScript"],
@@ -181,7 +181,7 @@ const enhancedProjects = [
     name: "Elante Mall",
     description:
       "A shopping mall website with store directory, event listings, and interactive mall map functionality.",
-    demo: "https://Abhishek6827.github.io/Elante_Mall/",
+    // demo: "https://Abhishek6827.github.io/Elante_Mall/",
     backend: null,
     github: "https://github.com/Abhishek6827/Elante_Mall",
     technologies: ["JavaScript", "HTML", "CSS"],
@@ -195,8 +195,8 @@ const enhancedProjects = [
     name: "Kanban_WorkBoard",
     description:
       "A full-stack project management dashboard with Django backend and React frontend. Features task tracking, team collaboration, and intuitive drag-and-drop interface.",
-    demo: "https://Abhishek6827.github.io/Kanban_WorkBoard/",
-    backend: "https://abhishektiwari6827.pythonanywhere.com/",
+    // demo: "https://Abhishek6827.github.io/Kanban_WorkBoard/",
+    // backend: "https://abhishektiwari6827.pythonanywhere.com/",
     github: "https://github.com/Abhishek6827/Kanban_WorkBoard",
     technologies: ["Django", "React", "Redux", "Tailwind CSS"],
     category: "Productivity",
@@ -209,7 +209,7 @@ const enhancedProjects = [
     name: "Market-Seasonality-Explorer",
     description:
       "A calendar application highlighting seasonal market trends and patterns for traders and investors.",
-    demo: "https://abhishek6827.github.io/Market-Seasonality-Explorer/",
+    // demo: "https://abhishek6827.github.io/Market-Seasonality-Explorer/",
     backend: null,
     github: "https://github.com/Abhishek6827/Market-Seasonality-Explorer",
     technologies: ["React", "Tailwind CSS", "Recharts", "Binance API"],
@@ -331,7 +331,7 @@ export default function Projects() {
   // Add backend URLs to specific projects
   const getProjectBackend = (projectName) => {
     const backendMap = {
-      Kanban_WorkBoard: "https://abhishektiwari6827.pythonanywhere.com/",
+      // Kanban_WorkBoard: "https://abhishektiwari6827.pythonanywhere.com/",
     };
     return backendMap[projectName] || null;
   };

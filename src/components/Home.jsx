@@ -186,7 +186,7 @@ function Hero() {
     {
       name: "Skill_Up",
       images: skillUpImages,
-      demo: "https://Abhishek6827.github.io/Skill_Up/",
+      // demo: "https://Abhishek6827.github.io/Skill_Up/",
       github: "https://github.com/Abhishek6827/Skill_Up",
       tech: ["React", "Firebase"],
       description:
@@ -196,7 +196,7 @@ function Hero() {
     {
       name: "Myntra Clone",
       images: myntraImages,
-      demo: "https://Abhishek6827.github.io/Myntra/",
+      // demo: "https://Abhishek6827.github.io/Myntra/",
       github: "https://github.com/Abhishek6827/Myntra",
       tech: ["React", "Redux", "CSS"],
       description: "Fashion e-commerce platform with modern UI",
@@ -205,7 +205,7 @@ function Hero() {
     {
       name: "Market Seasonality Calendar",
       images: calendarImages,
-      demo: "https://abhishek6827.github.io/Market-Seasonality-Explorer/",
+      // demo: "https://abhishek6827.github.io/Market-Seasonality-Explorer/",
       github: "https://github.com/Abhishek6827/Market-Seasonality-Explorer",
       tech: ["React", "Tailwind CSS", "Recharts", "Binance API"],
       description: "Calendar highlighting seasonal market trends",
@@ -214,7 +214,7 @@ function Hero() {
     {
       name: "Kanban_WorkBoard",
       images: workboardImages,
-      demo: "https://Abhishek6827.github.io/Kanban_WorkBoard/",
+      // demo: "https://Abhishek6827.github.io/Kanban_WorkBoard/",
       github: "https://github.com/Abhishek6827/Kanban_WorkBoard",
       tech: ["React", "Redux", "Tailwind"],
       description: "Project management dashboard with collaboration tools",
@@ -223,7 +223,7 @@ function Hero() {
     {
       name: "Elante Mall",
       images: elanteImages,
-      demo: "https://Abhishek6827.github.io/Elante_Mall/",
+      // demo: "https://Abhishek6827.github.io/Elante_Mall/",
       github: "https://github.com/Abhishek6827/Elante_Mall",
       tech: ["React", "CSS", "JavaScript"],
       description:
